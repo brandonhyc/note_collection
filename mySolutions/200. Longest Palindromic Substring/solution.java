@@ -29,6 +29,9 @@ public class Solution {
                 start = i - len / 2 + 1;
             }
         }
+        char l = '1';
+        String str = "aaa";
+        System.out.println(l + str); 
         System.out.printf("start: %d, maxLen: %d", start, maxLen);
         return s.substring(start, start + maxLen);
     }
