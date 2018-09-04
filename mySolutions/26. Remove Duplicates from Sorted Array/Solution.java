@@ -6,7 +6,7 @@ public class Solution {
     public int deduplication(int[] nums) {
         // write your code here
 
-        Set<Integet> set = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
 
         int count = 0, left = 0, right = 0;
 
