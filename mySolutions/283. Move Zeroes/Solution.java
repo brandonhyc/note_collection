@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class Solution {
     /**
@@ -6,22 +5,17 @@ public class Solution {
      * @return: nothing
      */
     public void moveZeroes(int[] nums) {
-        // write your code here
-        ArrayList<Integer> list = new ArrayList<>();
-        int count = 0;
-        for (int i : nums) {
-            if (i != 0) {
-                list.add(i);
-            } else count++;
-        }
-        for (int i = 0; i < count; i++) {
-            list.add(0);
-        }
 
-        for (int i = 0; i < list.size(); i++) {
-            nums[i] = list.get(i);
-        }
-        return;
+        int left = 0, right = 0;
 
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[right] != 0) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                left++;
+            }
+            right++;
+        }
     }
 }
