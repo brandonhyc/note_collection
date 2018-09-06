@@ -9,7 +9,7 @@
 
 ## 双指针 Two Pointer
 
-###适用范围: 
+### 适用范围: 
 
 1. 有序数组.
 2. 原数组内交换.
@@ -17,6 +17,12 @@
 
 
 # 模板
+
+Quick select:
+http://www.jiuzhang.com/solutions/kth-largest-element/
+
+Quick sort:
+http://www.jiuzhang.com/solutions/quick-sort/
 
 ## Quicksort
 
