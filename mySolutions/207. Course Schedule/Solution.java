@@ -9,7 +9,7 @@ public class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // write your code here
 
-        List[] edges = new ArrayList<Integer>[numCourses];
+        List[] edges = new ArrayList[prerequisites.length];
         int[] degree = new int[numCourses];
         
         for (int i = 0; i < numCourses; i++) {
@@ -33,8 +33,8 @@ public class Solution {
             int done = que.poll();
             count++;
 
-            for (int i = 0; i < edges[done].length; i++) {
-                int next = edges[done].get(i);
+            for (int i = 0; i < edges[done].size(); i++) {
+                int next = (int) edges[done].get(i);
                 degree[next]--;
                 if (degree[next] == 0) {
                     que.add(next);
@@ -44,5 +44,4 @@ public class Solution {
         } 
 
         return count == numCourses;
-    }
-}
+    }}

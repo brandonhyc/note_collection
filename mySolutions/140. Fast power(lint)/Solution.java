@@ -18,12 +18,12 @@ class Solution {
         // (a % b) * (c % b) % b
         // ((a/2 % b) * (a/2 % b)) % b
 
-        int product = fastPower(a, b, n / 2);
+        long product = fastPower(a, b, n / 2);
         product = (product * product) % b;
         if (n % 2 == 1) {
             product = (product * (a % b)) % b;
         } 
 
-        return product;
+        return (int) product;
     }
 }
