@@ -9,7 +9,7 @@ public class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // write your code here
 
-        List[] edges = new ArrayList[prerequisites.length];
+        List[] edges = new ArrayList[numCourses];
         int[] degree = new int[numCourses];
         
         for (int i = 0; i < numCourses; i++) {
