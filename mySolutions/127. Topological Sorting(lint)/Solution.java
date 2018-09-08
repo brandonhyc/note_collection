@@ -16,7 +16,7 @@ public class Solution {
      */    
     public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode> graph) {
         
-        if (graph == null || graph.length == 0) return null;
+        if (graph == null || graph.size() == 0) return null;
 
         Map<DirectedGraphNode, Integer> map = new HashMap<>();
         ArrayList<DirectedGraphNode> res = new ArrayList<>();
@@ -38,9 +38,10 @@ public class Solution {
             }
         }
         while (!que.isEmpty()) {
-            res.add(que.poll());
+            DirectedGraphNode node = que.poll();
+            res.add(node);
             
-            for (DirectedGraphNode neighbor : que.neighbors) {
+            for (DirectedGraphNode neighbor : node.neighbors) {
                 int degree = map.get(neighbor) - 1;
                 map.put(neighbor, degree);
                 if (degree == 0) {
