@@ -1,5 +1,3 @@
-import java.util.Map;
-
 public class Solution {
     /**
      * @param org a permutation of the integers from 1 to n
@@ -13,13 +11,13 @@ public class Solution {
 
         for (int[] seq : seqs) { 
             // seq: [from -> to]
-            for (int i = 0 i < seq.length; i++) {
+            for (int i = 0; i < seq.length; i++) {
                 graph.putIfAbsent(seq[i], new ArrayList<Integer>());
                 indegree.putIfAbsent(seq[i], 0);
-            }
-            if (i > 0) {
-                graph.get(seq[i - 1]).add(seq[i]);
-                indegree.put(seq[i], indegree.get(seq[i]) + 1);
+                if (i > 0) {
+                    graph.get(seq[i - 1]).add(seq[i]);
+                    indegree.put(seq[i], indegree.get(seq[i]) + 1);
+                }
             }
         }
         if (org.length > indegree.size()) {
@@ -40,11 +38,11 @@ public class Solution {
                 index++;
                 return false;
             }
-            for (int neighbor : graph.get(cur)) {
+            for (int neighbor : graph.get(ptr)) {
                 indegree.put(neighbor, indegree.get(neighbor) - 1);
-                if (indegree.get(neighbor == 0) {
+                if (indegree.get(neighbor) == 0) {
                     que.add(neighbor);
-                })
+                }
             }
         }
         return index == org.length;

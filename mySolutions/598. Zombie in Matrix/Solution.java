@@ -18,27 +18,36 @@ public class Solution {
         }
 
         while (!queX.isEmpty()) {
-            int x = queX.poll(); int y = queY.poll();
+            int size = queX.size();
             days++;
-
-            for (int d = 0; d < dx.length; d++) {
-                if (x + dx[d] >= 0 && x + dx[d] <= width - 1 &&
-                    y + dy[d] >= 0 && y + dy[d] <= height - 1) {
-                    if (grid[y + dy[d]][x + dx[d]] == 0) {
-                        grid[y + dy[d]][x + dx[d]] = 1;
-                        queX.offer(x + dx[d]); 
-                        queY.offer(y + dy[d]);
+            for (int n = 0; n < size; n++) {
+                int x = queX.poll(); int y = queY.poll();
+                for (int d = 0; d < dx.length; d++) {
+                    if (x + dx[d] >= 0 && x + dx[d] <= width - 1 &&
+                        y + dy[d] >= 0 && y + dy[d] <= height - 1) {
+                        if (grid[y + dy[d]][x + dx[d]] == 0) {
+                            grid[y + dy[d]][x + dx[d]] = 1;
+                            queX.offer(x + dx[d]); 
+                            queY.offer(y + dy[d]);
+                            if (allFinished(grid)) {
+                                return days;
+                            }
+                        }
                     }
                 }
             }
         }
 
-        for (int[] y: grid) {
-            for (int x: y) {
-                if (x == 0) return -1;
+        return -1;
+    }
+
+    private static boolean allFinished(int[][] grid) {
+        for (int[] y : grid) {
+            for (int x : y) {
+                if (x == 0)
+                    return false;
             }
         }
-        
-        return days;
+        return true;
     }
 }

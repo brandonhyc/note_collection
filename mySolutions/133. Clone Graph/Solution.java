@@ -1,31 +1,56 @@
 /**
- * Definition for undirected graph. class UndirectedGraphNode { int label;
- * List<UndirectedGraphNode> neighbors; UndirectedGraphNode(int x) { label = x;
- * neighbors = new ArrayList<UndirectedGraphNode>(); } };
+ * Definition for undirected graph.
+ * class UndirectedGraphNode {
+ *     int label;
+ *     ArrayList<UndirectedGraphNode> neighbors;
+ *     UndirectedGraphNode(int x) { 
+ *          label = x; 
+ *          neighbors = new ArrayList<UndirectedGraphNode>(); 
+ *     }
+ * };
  */
 public class Solution {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
 
         if (node == null)
-            return null;
+            return node;
 
+        Set<UndirectedGraphNode> nodes = getNodes(node);
+
+        // copy neighbors(edges)
         Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
-        Queue<UndirectedGraphNode> que = new LinkedList<>();
-        que.add(node);
-        map.put(node, new UndirectedGraphNode(node.label));
+        for (UndirectedGraphNode n : nodes) {
+            map.put(n, new UndirectedGraphNode(n.label));            
+        }
 
-        while (!que.isEmpty()) {
-            UndirectedGraphNode nodePtr = que.poll();
-
-            for (UndirectedGraphNode neighbor : nodePtr.neighbors) {
-                if (!map.containsKey(neighbor)) {
-                    que.add(neighbor);
-                    map.put(neighbor, new UndirectedGraphNode(neighbor.label));
-                }
-                map.get(nodePtr).neighbors.add(neighbor);
+        for (UndirectedGraphNode n : nodes) {
+            for (UndirectedGraphNode neighbor : n.neighbors) {
+                UndirectedGraphNode copyNeighbor = map.get(neighbor);
+                map.get(n).neighbors.add(copyNeighbor);
             }
         }
 
         return map.get(node);
     }
+
+    private Set<UndirectedGraphNode> getNodes(UndirectedGraphNode node) {
+        Queue<UndirectedGraphNode> que = new LinkedList<>();
+        HashSet<UndirectedGraphNode> set = new HashSet<>();
+
+        que.offer(node);
+        set.add(node);
+
+        while(!que.isEmpty()) {
+            UndirectedGraphNode head = que.poll();
+            for (UndirectedGraphNode neighbor : head.neighbors) {
+                if (!set.contains(neighbor)) {
+                    set.add(neighbor);
+                    que.offer(neighbor);
+                }
+            }
+        }
+
+        return set;
+    }
+
 }
