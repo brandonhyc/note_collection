@@ -25,21 +25,17 @@ public class Solution {
         Queue<TreeNode> que = new LinkedList<>();
         LinkedList<String> labels = new LinkedList<>();
         
-
         que.offer(root);
         while (!que.isEmpty()) {
+
             TreeNode node = que.poll();
-            labels.add(Integer.toString(node.val));
             
-            if (node.left != null) {
-                que.offer(node.left);                
-            } else {
+            if (node == null) {
                 labels.add("#");
-            }
-            if (node.right != null) {
-                que.offer(node.right);                
             } else {
-                labels.add("#");
+                que.offer(node.left);
+                que.offer(node.right);
+                labels.add(Integer.toString(node.val));
             }
         }
 
@@ -64,23 +60,24 @@ public class Solution {
 
         if (data.equals("[]")) return null;
 
-        String[] labels = data.replaceAll("[", "").replaceAll("]", "").replaceAll(" ","").split(",");
-        System.out.print(labels);
-        System.out.print("\n");
-
-        TreeNode root = new TreeNode(Integer.parseInt(labels[0]));
+        String[] labels = data.replace("[", "").replace("]","").split(","+" ");
+        
         Queue<TreeNode> que = new LinkedList<>();
-        boolean isLeft = false;
+        TreeNode root = new TreeNode(Integer.parseInt(labels[0]));
 
+        boolean isLeft = false;
         TreeNode head = root;
         que.offer(root);        
         for (int i = 1; i < labels.length; i++) {
-            
             isLeft = !isLeft;
-            if (labels[i] == "#") {
+            
+            if (labels[i].equals("#")) {
+                if (isLeft) {
+                    head = que.poll();
+                }
                 continue;
-            }
-
+            } 
+            
             TreeNode next = new TreeNode(Integer.parseInt(labels[i]));
             if (isLeft) {
                 head = que.poll();
@@ -92,6 +89,5 @@ public class Solution {
         }
 
         return root;
-        
     }
 }
