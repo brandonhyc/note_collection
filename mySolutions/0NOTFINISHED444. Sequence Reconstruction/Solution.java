@@ -34,10 +34,15 @@ public class Solution {
         int index = 0;
         while (que.size() == 1) {
             int ptr = que.poll();
-            if (org[index] != ptr) {
-                index++;
+            if (index < org.length) {
+                if (org[index] != ptr) {
+                    return false;
+                }                
+            } else if (index > org.length) {
                 return false;
             }
+            index++;
+            
             for (int neighbor : graph.get(ptr)) {
                 indegree.put(neighbor, indegree.get(neighbor) - 1);
                 if (indegree.get(neighbor) == 0) {
