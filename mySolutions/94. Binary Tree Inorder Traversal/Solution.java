@@ -4,21 +4,20 @@
  * this.right = null; } }
  */
 
- // Given:
-//     1
-//    / \
-//   2   3
-//  / \
-// 4   5
-// return [1,2,4,5,3].
-
+// Given binary tree {1,#,2,3}; 
+//             return [1,3,2].
+//    1
+//     \
+//      2
+//     /
+//    3
 
 public class Solution {
     /**
      * @param root: A Tree
      * @return: Preorder in ArrayList which contains node values.
      */
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode root) {
         // write your code here
 
         if (root == null) {
@@ -28,9 +27,8 @@ public class Solution {
         ArrayList<Integer> list = new ArrayList<>();
         
         TreeNode ptr = root;
-        stack.push(ptr);
 
-        while (!stack.empty()) {
+        while (!stack.empty() || ptr != null) {
             while (ptr != null) {
                 stack.add(ptr);
                 ptr = ptr.left;
@@ -39,6 +37,7 @@ public class Solution {
             func(list, ptr);
             ptr = ptr.right;
         }
+        return list;
     }
     
     private void func(List<Integer> list, TreeNode node) {

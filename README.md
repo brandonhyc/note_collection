@@ -27,6 +27,63 @@ ICC那边最后一面的时候, 我说需要考虑一下简历修改的问题. �
 
 # 模板
 
+
+## BTree
+### Binary Tree Inorder Traversal
+https://www.lintcode.com/problem/binary-tree-inorder-traversal/description
+
+````java
+public ArrayList<Integer> inorderTraversal(TreeNode root) {
+    Stack<TreeNode> stack = new Stack<TreeNode>();
+    ArrayList<Integer> result = new ArrayList<Integer>();
+    TreeNode curt = root;
+    while (curt != null || !stack.empty()) {
+        while (curt != null) {
+            stack.add(curt);
+            curt = curt.left;
+        }
+        curt = stack.pop();
+        result.add(curt.val);
+        curt = curt.right;
+    }
+    return result;
+}
+````
+
+### Binary Tree Preorder Traversal
+https://www.jiuzhang.com/solution/binary-tree-preorder-traversal/
+
+````java
+public List<Integer> preorderTraversal(TreeNode root) {
+    // write your code here
+    Stack<TreeNode> stack = new Stack<TreeNode>();
+    List<Integer> res = new ArrayList<Integer>();
+
+    if (root == null) {
+        return res;
+    }
+
+    stack.push(root);
+    while (!stack.empty()) {
+        TreeNode node = stack.pop();
+        res.add(node.val);
+        if (node.right != null) {
+            stack.push(node.right);
+        }
+        if (node.left != null) {
+            stack.push(node.left);
+        }
+    }
+
+    return res;
+}
+````
+
+### Binary Tree Postorder Traversal
+https://www.jiuzhang.com/solution/binary-tree-postorder-traversal/
+
+
+
 ## Topological Sorting 拓扑排序 
 
 https://www.jiuzhang.com/solutions/topological-sorting/
