@@ -1,6 +1,11 @@
-import java.util.Stack;
+// Given:
 
-import javax.swing.tree.TreeNode;
+//     1
+//    / \
+//   2   3
+//  / \
+// 4   5
+// return [1,2,4,5,3].
 
 /**
  * Definition of TreeNode: public class TreeNode { public int val; public
@@ -16,17 +21,16 @@ public class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         // write your code here
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        List<Integer> preorder = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
 
         if (root == null) {
-            return preorder;
+            return res;
         }
-        
+
         stack.push(root);
         while (!stack.empty()) {
             TreeNode node = stack.pop();
-            preorder.add(node.val);
-
+            res.add(node.val);
             if (node.right != null) {
                 stack.push(node.right);
             }
@@ -35,6 +39,6 @@ public class Solution {
             }
         }
 
-        return preorder;
+        return res;
     }
 }
