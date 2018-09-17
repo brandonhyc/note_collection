@@ -17,15 +17,15 @@ public class Solution {
         }
         
         List<Integer> list = new ArrayList<>();
-        divideAndConquer(list, root);
+        traversal(list, root);
         return list;
     }
-    private void divideAndConquer(List list, TreeNode root) {
+    private void traversal(List list, TreeNode root) {
         if (root == null) {
             return;
         }
-        divideAndConquer(list, root.left);
-        divideAndConquer(list, root.right);
+        traversal(list, root.left);
+        traversal(list, root.right);
         list.add(root.val);
     }
 }
