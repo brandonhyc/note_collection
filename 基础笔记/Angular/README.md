@@ -47,14 +47,36 @@ export class ServersComponent implements OnInit {
 ```html
 <button [disabled]="!boolFlag" (click)="func()"></button>
 ```
+### Style Property [ngStyle]
+```html
+<p [ngStyle]="{ 'background-color': getColor()}"></p>
+```
+### Class Property [ngClass]
+```html
+<p [ngClass]="{ btnClicked: true}"></p>
+```
+
 ### Two Way Binding [(ngModel)]
 ```html
 <input [(ngModel)="serverName"]></input>
 
 ```
 
-
 ### String Interpolation {{ }}
 ```html
 <p>{{ string }}</p>
+```
+
+### Directive *ngIf="" 
+```html
+<p *ngIf="flag; 
+    else temp">Hello</p>
+<ng-template #temp>
+  <p>Hi!</p>
+</ng-template>
+```
+
+### *ngFor="let server of servers"
+```html
+<p *ngFor="let server of servers">Hello</p>
 ```

@@ -214,6 +214,8 @@ helper(nums, results, startIndex + 1, subset);
 如果在递归出口直接调用list, 只会返回一个指针, 而该指针内的内容会被改写.
 *易错点3:* 忘记Arrays.sort()
 
+*优化1* 一般求和, 可以判断当前组合值的和, 如果已经超过预期值, 可以提早break
+
 ````java
 public class Solution {
     /**
