@@ -204,6 +204,53 @@ public class Solution {
 https://www.jiuzhang.com/tutorial/algorithm/371
 
 
+## Depth First Search (DFS)
+
+````java
+public class Solution {
+    /**
+     * @param nums: A set of numbers.
+     * @return: A list of lists. All valid subsets.
+     */
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        // write your code here
+        List<List<Integer>> results = new ArrayList<>();
+
+        if (nums.length == 0) {
+            results.add(new ArrayList<>());
+            return results;
+        }
+
+        Arrays.sort(nums);
+
+        helper(nums, results, 0, new ArrayList<>());
+
+        return results;
+    }
+
+    private void helper(int[] nums, 
+                        List results, 
+                        int startIndex, 
+                        List subset) {
+        
+        results.add(new ArrayList<>(subset));
+        
+        for (int i = startIndex; i < nums.length; i++) {
+            if (i != 0 && nums[i] == nums[i - 1] && i > startIndex){
+                continue; // 用于去重
+            }
+            subset.add(nums[i]);
+            helper(nums, results, i + 1, subset);
+            subset.remove(subset.size() - 1);
+        }
+    }
+}
+````
+
+
+
+
+
 
 ## Quicksort
 
