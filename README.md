@@ -207,6 +207,13 @@ https://www.jiuzhang.com/tutorial/algorithm/371
 ## Depth First Search (DFS)
 多用于求组合的情况
 
+*易错点1:* 分不清 i 还是 startIndex
+helper(nums, results, startIndex + 1, subset);
+正确为helper(nums, results, i + 1, subset);
+*易错点2:* 错误地直接返回list, 而不是复制结果后再写入
+如果在递归出口直接调用list, 只会返回一个指针, 而该指针内的内容会被改写.
+*易错点3:* 忘记Arrays.sort()
+
 ````java
 public class Solution {
     /**
