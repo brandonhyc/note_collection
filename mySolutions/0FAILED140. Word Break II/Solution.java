@@ -12,14 +12,15 @@ public class Solution {
             return results;
         }
 
-        helper(s, wordDict, results, 0, new ArrayList());
+        helper(s, wordDict, results, 0, new ArrayList(), new HashMap <String, LinkedList<String >> map);
         return results;
     }
     private void helper(String s, 
                         Set<String> wordDict, 
                         List<String> results,
                         int startIndex, 
-                        List<String> subStrings) {
+                        List<String> subStrings,
+                        HashMap<String, LinkedList<String>> map) {
         if (startIndex >= s.length()) {
             // exit
             // convert
