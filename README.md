@@ -205,6 +205,7 @@ https://www.jiuzhang.com/tutorial/algorithm/371
 
 
 ## Depth First Search (DFS)
+多用于求组合的情况
 
 ````java
 public class Solution {
