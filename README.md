@@ -257,8 +257,38 @@ public class Solution {
 }
 ````
 
+### Memorized DFS
+```java
+    private List<String> helper(
+        String s, Set<String> dict, Map<String, ArrayList<String>> map) {
 
+        ArrayList<String> results = new ArrayList<String>();
 
+        if (map.containsKey(s)) {
+            return map.get(s);
+        }
+        if (dict.contains(s)) {
+            results.add(s);
+        }
+
+        for (int i = 1; i < s.length(); i++) {
+            String word = s.substring(0, i);
+            
+            if (!dict.contains(word)) {
+                continue;
+            }
+            String suffix = s.substring(i);
+            List<String> segmentations = helper(suffix, dict, map);
+            
+            for (String seg: segmentations) {
+                String result = word + " " + seg;
+                results.add(result);
+            }
+        }
+        map.put(s, results);
+        return results;
+    }
+```
 
 
 
