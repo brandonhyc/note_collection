@@ -1,0 +1,118 @@
+# HTML
+
+## HTML Encoded characters 
+
+## HTML Entities Symbols
+Some reserved characters can be replaced by some with character entities in HTML
+
+
+# Bootstrap
+
+## Form-control
+Three type: default(inline->vertical), inline, vertical 
+default settings: 
+1. `div.form-group` as wrapper 
+2. `.form-control` for each `input` 
+3. put `checkbox` in `div.checkbox` with `label` 
+
+```html
+<form action="/action_page.php">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+```
+
+## 常见面试难点
+1. link和@import有什么区别？
+    1. link除了加载css外，还可以定义RSS等其他事务；@impor t属于CSS范畴，只能加载CSS
+    2. link引用CSS时候，页面载入时同时加载；@import需要在页面完全加载以后加载，而且@import被引用的CSS会等到引用它的CSS文件被加载完才加载
+
+2. HTML5有哪些新特性
+    
+    1. new Api: Geolocation, drag, drop
+    2. friendly Elements:  article footer header nav section
+    3. new elements: canvas, video, audio
+    4. localStorage, sessionStorage
+    5. web worker..
+
+3. cookies，sessionStorage 和 localStorage 的区别？
+cookies 是为了标识用户身份而存储在用户本地终端上的数据，始终在同源http请求中携带，即cookies在浏览器和服务器间来回传递，而sessionstorage和localstorage 不会自动把数据发给服务器，仅在本地保存。
+cookie过期时间之前一直有效，即使窗口关闭。sessionstorage 窗口关闭失效。localstorage 用作长久数据保存。
+
+
+5. doctype tag
+it is an instruction to the web browser about what version of the markup language the page is written in
+
+6. Why is it generally a good idea to position CSS <link> between <head></head> and JS <script> just before </body>? 
+You usually put the <link> tags in between the <head> to prevent __Flash of Unstyled Content__ which gives the user something to look at while the rest of the page is being parsed.
+
+7. 事件机制
+    1. document 往 target节点，捕获前进，遇到注册的捕获事件立即触发执行
+    2. 到达target节点，触发事件（对于target节点上, 先注册先执行）
+    3. target节点 往 document 方向，冒泡前进，遇到注册的冒泡事件立即触发
+
+点击s2，click 事件从 document->html->body->s1->s2(捕获前进)
+这里在s1上发现了捕获注册事件，则输出"s1 捕获事件"
+到达s2，已经到达目的节点，
+s2上注册了冒泡和捕获事件，先注册的冒泡后注册的捕获，则先执行冒泡，输出"s2 冒泡事件"
+再在s2上执行后注册的事件，即捕获事件，输出"s2 捕获事件"
+下面进入冒泡阶段，按照s2->s1->body->html->document(冒泡前进)
+在s1上发现了冒泡事件，则输出"s1 冒泡事件"
+
+8. GET/POST
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+Notes on GET:
+* Appends form-data into the URL in name/value pairs
+* The length of a URL is limited (about 3000 characters)
+* Never use GET to send sensitive data! (will be visible in the URL)
+* Useful for form submissions where a user want to bookmark the result
+* GET is better for non-secure data, like query strings in Google
+Notes on POST:
+* Appends form-data inside the body of the HTTP request (data is not shown is in URL)
+* Has no size limitations
+* Form submissions with POST cannot be bookmarked
+
+
+````html
+    <div id="s1">s1
+        <div id="s2">s2</div>
+    </div>
+    <script>
+        s1.addEventListener("click",function(e){
+                console.log("s1 冒泡事件");         
+        },false);
+        s2.addEventListener("click",function(e){
+                console.log("s2 冒泡事件");
+        },false);
+                
+        s1.addEventListener("click",function(e){
+                console.log("s1 捕获事件");
+        },true);
+                
+        s2.addEventListener("click",function(e){
+                console.log("s2 捕获事件");
+        },true);
+    </script>
+
+````
+
+8. Button vs input 
+the BUTTON element may have content, so it's easier to style
+button type
+submit ||  "submits the form when clicked (default)"
+reset  ||  "resets the fields in the form when clicked"
+button ||  "clickable, but without any event handler until one is assigned"
+    
+
+## 

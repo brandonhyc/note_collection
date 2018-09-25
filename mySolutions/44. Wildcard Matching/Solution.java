@@ -3,9 +3,8 @@
 //      两个指针si->s, pi->p
 //      1. pi 不是 *. 那么就检查 (si) == (pi), 或者 (pi) == ?. 
 //            若true, 则用 &&, (si, pi) && (si++, pi++)的结果; 若false, 则 return false;
-//      2. pi 是 *. 难点!!!!不会!!!
+//      2. pi 是 *. 难点!!!!不会!!! 不过就是选择 si++, 或是pi++
 // 易错点1: boolean[][]初始化, 所有点初始值为false, 不是null
-
 
 public class Solution {
     /**
@@ -24,7 +23,6 @@ public class Solution {
 
         return helper(s, p, 0, 0, memo, visited);
     }
-
     private boolean helper(String s, String p, 
                             int indexS, int indexP,
                             boolean[][] memo,
@@ -32,7 +30,6 @@ public class Solution {
 
         if (indexS == s.length()) {
             // when s end first;
-            // func need to be stars
             return isStarTail(p, indexP);
         }
 
