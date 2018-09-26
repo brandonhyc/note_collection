@@ -1,5 +1,18 @@
 # CSS
 
+
+## CSS Box model
+box-sizing: content-box / border-box
+### content-box (default)
+Width and Height are applied to only the content area <br>
+width = width of the content<br>
+the space width = width + (padding + border + margin) * 2
+### border-box
+Width and Height are applied to content, padding and border, but not margin.<br>
+width = border + padding + width of the content<br>
+the space width = width + margin * 2<br>
+.box {width: 350px; border: 10px solid black;} renders a box that is 370px wide.
+
 ## CSS - Inclusion
 4 ways to associate styles with your HTML document
 * Embedded CSS - In HTML header < style type="text/css" media="all"></ style>
