@@ -1,4 +1,24 @@
 
+# JavaScript Declarations, Initialization and Hoisting
+1. Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope
+2. JavaScript only hoists declarations, not initialization
+
+```javascript
+x = 5; // Assign 5 to x
+elem = document.getElementById("demo"); // Find an element 
+elem.innerHTML = x;                     // Display x in the element
+var x; // Declare x
+// Result: 5
+```
+```javascript
+var x = 5; // Initialize x
+var y;     // Declare y
+elem = document.getElementById("demo"); // Find an element 
+elem.innerHTML = x + " " + y;           // Display x and y
+y = 7;    // Assign 7 to y
+//Result: 5, undefined
+```
+
 # JS PROTOTYPE
 
 ### 闭包 Closure
