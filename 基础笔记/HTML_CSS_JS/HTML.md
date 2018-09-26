@@ -33,9 +33,7 @@ default settings:
 ```
 
 ## 常见面试难点
-1. link和@import有什么区别？
-    1. link除了加载css外，还可以定义RSS等其他事务；@impor t属于CSS范畴，只能加载CSS
-    2. link引用CSS时候，页面载入时同时加载；@import需要在页面完全加载以后加载，而且@import被引用的CSS会等到引用它的CSS文件被加载完才加载
+
 
 2. HTML5有哪些新特性
     
