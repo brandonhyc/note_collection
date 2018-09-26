@@ -42,10 +42,10 @@ the space width = width + margin * 2<br>
   </div>
 </div>
 ```
-* <NEW FEATURE: NOT SUPPORTED IN OLD IE> *
+!!NEW FEATURE: NOT SUPPORTED IN OLD IE
 3. rem: `1rem`= by default `16px` = `font-size` of root
-** rems don't support old IE
-** To adjusts 1rem equals 10px from default(16px) To set the font-size to the equivalent of 14px, set it to 1.4em.
+* rems don't support old IE
+* To adjusts 1rem equals 10px from default(16px) To set the font-size to the equivalent of 14px, set it to 1.4em.
 ```css
 body { font-size:62.5%; }
 h1 { font-size: 2.4em; } /* =24px */
