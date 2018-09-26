@@ -1,3 +1,11 @@
+// 思路: 算法得记住. 先由右至左遍历找出峰值位置 i, 再次右左遍历, 求出 [j] > [i - 1], 并调换.
+//  最后旋转 >= i 的所有值
+
+// 易错点1: while 很容易出错. 所以每次读取array, 必须先定好boundry
+
+// 相关练习: 1. 排序数组求峰值(二分法) 2. nextPermuation I&II 
+
+
 public class Solution {
     /**
      * @param nums: An array of integers
