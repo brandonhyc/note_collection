@@ -51,21 +51,25 @@ cookie过期时间之前一直有效，即使窗口关闭。sessionstorage 窗�
 5. doctype tag
 it is an instruction to the web browser about what version of the markup language the page is written in
 
-6. Why is it generally a good idea to position CSS <link> between <head></head> and JS <script> just before </body>? 
-You usually put the <link> tags in between the <head> to prevent __Flash of Unstyled Content__ which gives the user something to look at while the rest of the page is being parsed.
+6. Why is it generally a good idea to position CSS < link> between < head>< /head> and JS < script> just before < /body>? 
+You usually put the < link> tags in between the < head> to prevent __Flash of Unstyled Content__ which gives the user something to look at while the rest of the page is being parsed.
 
-7. 事件机制
+7. 事件机制 
     1. document 往 target节点，捕获前进，遇到注册的捕获事件立即触发执行
     2. 到达target节点，触发事件（对于target节点上, 先注册先执行）
     3. target节点 往 document 方向，冒泡前进，遇到注册的冒泡事件立即触发
 
-点击s2，click 事件从 document->html->body->s1->s2(捕获前进)
-这里在s1上发现了捕获注册事件，则输出"s1 捕获事件"
-到达s2，已经到达目的节点，
-s2上注册了冒泡和捕获事件，先注册的冒泡后注册的捕获，则先执行冒泡，输出"s2 冒泡事件"
-再在s2上执行后注册的事件，即捕获事件，输出"s2 捕获事件"
-下面进入冒泡阶段，按照s2->s1->body->html->document(冒泡前进)
+点击s2，click 事件从 document->html->body->s1->s2(捕获前进)<br>
+这里在s1上发现了捕获注册事件，则输出"s1 捕获事件"<br>
+到达s2，已经到达目的节点，<br>
+s2上注册了冒泡和捕获事件，先注册的冒泡后注册的捕获，则先执行冒泡，输出"s2 冒泡事件"<br>
+再在s2上执行后注册的事件，即捕获事件，输出"s2 捕获事件"<br>
+下面进入冒泡阶段，按照s2->s1->body->html->document(冒泡前进)<br>
 在s1上发现了冒泡事件，则输出"s1 冒泡事件"
+
+查看EXAMPLE: 
+http://jsfiddle.net/brandonhyc/0b8eLmp1/
+
 
 8. GET/POST
 The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
@@ -106,11 +110,9 @@ Notes on POST:
 ````
 
 8. Button vs input 
-the BUTTON element may have content, so it's easier to style
-button type
-submit ||  "submits the form when clicked (default)"
-reset  ||  "resets the fields in the form when clicked"
-button ||  "clickable, but without any event handler until one is assigned"
+the BUTTON element may have content, so it's easier to style<br>
+button type<br>
+submit ||  "submits the form when clicked (default)"<br>
+reset  ||  "resets the fields in the form when clicked"<br>
+button ||  "clickable, but without any event handler until one is assigned"<br>
     
-
-## 
