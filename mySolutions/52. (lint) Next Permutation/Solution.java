@@ -21,13 +21,15 @@ public class Solution {
             while (i > 0 && temp[j] <= temp[i - 1]) {
                 j--;
             }
-    
+
             swap(temp, i - 1, j);
         }
 
         int left = i, right = len - 1;
         while (left <= right) {
             swap(temp, left, right);
+            left++;
+            right--;
         }
         return temp;
     }

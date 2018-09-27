@@ -1,6 +1,6 @@
 # HTML
 
-## HTML Encoded characters 
+## HTML template    
 
 ## HTML Entities Symbols
 Some reserved characters can be replaced by some with character entities in HTML

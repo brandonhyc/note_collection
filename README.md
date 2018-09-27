@@ -207,6 +207,8 @@ https://www.jiuzhang.com/tutorial/algorithm/371
 ## Depth First Search (DFS)
 多用于求组合的情况
 
+
+### DFS 求组合
 *易错点1:* 分不清 i 还是 startIndex
 helper(nums, results, startIndex + 1, subset);
 正确为helper(nums, results, i + 1, subset);
@@ -256,8 +258,19 @@ public class Solution {
     }
 }
 ````
+### 组合去重
+例如[1,2',2''], 保证 2 没有被重复提取. 
+首先, 通过Arrays.sort()保证提取是紧挨着的. 其次, 就是在循环过程中加判断 
+```java
+Arrays.sort(nums);
 
-### Memorized DFS
+if (i != 0 && nums[i] == nums[i - 1] && i > startIndex){
+    continue; // 用于去重
+}
+
+```
+
+### Memorized DFS 求组合
 ```java
     private List<String> helper(
         String s, Set<String> dict, Map<String, ArrayList<String>> map) {
@@ -290,7 +303,50 @@ public class Solution {
     }
 ```
 
+### DFS Permutation
+```java
+public class Solution {
+    /*
+     * @param nums: A list of integers.
+     * 
+     * @return: A list of permutations.
+     */
+    public List<List<Integer>> permute(int[] nums) {
+        // write your code here
+        List<List<Integer>> results = new ArrayList<>();
+        if (nums.length == 0) {
+            results.add(new ArrayList<>());
+            return results;
+        }
 
+        dfs(nums, new boolean[nums.length], new ArrayList<>(), results);
+        return results;
+
+    }
+    private void dfs(int[] nums, 
+                     boolean[] visited,
+                     List<Integer> permutation,
+                     List<List<Integer>> results) {        
+
+        if (nums.length == permutation.size()) {
+            results.add(new ArrayList<>(permutation));
+            return;
+            //exit
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (visited[i]) {
+                continue;
+            }
+            permutation.add(nums[i]);
+            visited[i] = true;
+            dfs(nums, visited, permutation, results);
+            visited[i] = false;
+            permutation.remove(permutation.size() - 1);
+        }
+        return;
+    }
+}
+```
 
 ## Quicksort
 
