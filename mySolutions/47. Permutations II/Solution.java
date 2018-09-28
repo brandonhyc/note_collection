@@ -38,7 +38,7 @@ public class Solution {
             visited[i] = true;
             dfs(nums, results, permutation, visited);
             visited[i] = false;
-            permutation.add(permutation.size() - 1);
+            permutation.remove(permutation.size() - 1);
 
         }
 

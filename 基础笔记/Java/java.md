@@ -23,3 +23,23 @@ String joined = String.join(" and ", list);
 
 ### startsWith 
 Tests if this string starts with the specified prefix.
+
+### String Char plus, to Char Array, char At 
+```java
+String str = "";
+char n = 'abc';
+str += n; 
+// 1. output: "abc"
+str.toCharArray();
+// 2. output: ['a', 'b', 'c']
+str.charAt(str.length() - 1);
+// 3. output: "ab"
+```
+
+### Char to Int
+```java
+Integer.parseInt(str);
+
+charNum - '0';
+str.charAt(startIndex) - '0';
+```
