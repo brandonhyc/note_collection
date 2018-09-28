@@ -8,7 +8,8 @@ public class Solution {
 
         List<String> results = new ArrayList<>();
 
-        if (str.length == 0) {
+        if (str.length() == 0) {
+            results.add("");
             return results;
         }
 
@@ -16,32 +17,29 @@ public class Solution {
         Arrays.sort(strArray);
         String sortedStr = new String(strArray); 
 
-        dfs(sortedStr, results, "", 0, new boolean[str.length()]);
+        dfs(sortedStr, results, "", new boolean[str.length()]);
         return results;
     }
     private void dfs(String str, List<String> results, 
-                    String substring, int startIndex, boolean[] visited) {
-        if (startIndex == str.length) {
+                    String substring, boolean[] visited) {
+        if (substring.length() == str.length()) {
             results.add(new String(substring));
             return;
         }
 
-        if (visited[startIndex]) {
-            return;
-        }
-
-        for (char c : str.toCharArray()) {
-            if (startIndex > 0 && 
-                str.charAt(startIndex) == str.charAt(startIndex - 1) &&
-                !visited[startIndex - 1]) {
+        for (int i = 0; i < str.length(); i++) {
+            if (visited[i]) {
                 continue;
             }
-
-            dfs(str, results, substring + c, startIndex + 1, visited);
+            if (i > 0 && str.charAt(i - 1) == str.charAt(i) &&
+                !visited[i - 1]) {
+                continue;
+            }
+            visited[i] = true;
+            dfs(str, results, substring + str.charAt(i), visited);
+            visited[i] = false;
         }
         return;
         // "aabb", "abab"
-
-        
     }
 }
