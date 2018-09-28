@@ -1,67 +1,77 @@
-class Solution {
-    /**
-     * Get all distinct N-Queen solutions
+// 思路: 难. 很难. 想到脑袋都开花了才弄出来. 
+//  搞清楚扫描方式
+// 图片
+
+
+
+public class Solution {
+    /*
      * @param n: The number of queens
      * @return: All distinct solutions
-     * For example, A string '...Q' shows a queen on forth position
      */
-    List<List<String>> solveNQueens(int n) {
+    public List<List<String>> solveNQueens(int n) {
+        // write your code here
         List<List<String>> results = new ArrayList<>();
+
         if (n <= 0) {
             return results;
         }
-        
-        search(results, new ArrayList<Integer>(), n);
+
+        search(n, results, new ArrayList<>());
         return results;
     }
-    
-    /*
-     * results store all of the chessboards
-     * cols store the column indices for each row
-     */
-    private void search(List<List<String>> results,
-                        List<Integer> cols,
-                        int n) {
+
+    private void search(int n, 
+                        List<List<String>> results, 
+                        List<Integer> cols) {
+
         if (cols.size() == n) {
             results.add(drawChessboard(cols));
             return;
         }
-        
+
         for (int colIndex = 0; colIndex < n; colIndex++) {
+            // row: [0,1,2,3]
+            //  col: 4 2 1 3
             if (!isValid(cols, colIndex)) {
                 continue;
             }
             cols.add(colIndex);
-            search(results, cols, n);
+            search(n, results, cols);
             cols.remove(cols.size() - 1);
         }
     }
-    
+
     private List<String> drawChessboard(List<Integer> cols) {
         List<String> chessboard = new ArrayList<>();
-        for (int i = 0; i < cols.size(); i++) {
-            StringBuilder sb = new StringBuilder();
-            for (int j = 0; j < cols.size(); j++) {
-                sb.append(j == cols.get(i) ? 'Q' : '.');
+        int size = cols.size();
+        for (int rowIndex = 0; rowIndex < size; rowIndex++) {
+            String row = "";
+            for (int colIndex = 0; colIndex < size; colIndex++) {
+                row += (cols.get(rowIndex) == colIndex) ? "Q" : ".";  
             }
-            chessboard.add(sb.toString());
+            chessboard.add(row);
         }
         return chessboard;
     }
-    
-    private boolean isValid(List<Integer> cols, int column) {
-        int row = cols.size();
-        for (int rowIndex = 0; rowIndex < cols.size(); rowIndex++) {
-            if (cols.get(rowIndex) == column) {
+
+    private boolean isValid(List<Integer> cols, int nextX) {
+        // iterate again to check columIndex match in each row 
+        int nextY = cols.size();
+        for (int lastY = 0; lastY < nextY; lastY++) {
+            int lastX = cols.get(lastY);
+            
+            if (nextX == lastX) {
                 return false;
             }
-            if (rowIndex + cols.get(rowIndex) == row + column) {
+            if (nextX + nextY == lastX + lastY){
                 return false;
             }
-            if (rowIndex - cols.get(rowIndex) == row - column) {
+            if (nextX - nextY == lastX - lastY) {
                 return false;
             }
         }
         return true;
     }
+    
 }
