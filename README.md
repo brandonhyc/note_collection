@@ -218,6 +218,13 @@ helper(nums, results, startIndex + 1, subset);
 
 *优化1* 一般求和, 可以判断当前组合值的和, 如果已经超过预期值, 可以提早break
 
+
+xxxxxxxxxxxx|Number | String
+non-repeated| Permutation | 
+repeated| permutation ii   | String permutation
+
+
+
 ````java
 public class Solution {
     /**
