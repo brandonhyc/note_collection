@@ -22,7 +22,7 @@ public class Solution {
                 }
                 map.put(pattern.charAt(i), arrOfStr[i]);
             }
-            if (map.get(pattern.charAt(i)) != arrOfStr[i]) {
+            if (!map.get(pattern.charAt(i)).equals(arrOfStr[i])) {
                 return false;
             }
         }

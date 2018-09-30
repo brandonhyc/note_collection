@@ -22,7 +22,15 @@ ICC那边最后一面的时候, 我说需要考虑一下简历修改的问题. �
 
 -9.17.2018记
 
+# 时间复杂度 空间复杂度
+## Set
+集合 Set，是一组无重复的元素。
 
+### HashSet
+HashSet 以哈希表实现。插入的元素是无序的。add，remove 和 contains 都是常数时间复杂度 O(1)。
+
+### TreeSet
+TreeSet 以红黑树实现。插入的元素由树结构保持了顺序。add，remove 和 contains 都是对数时间复杂度 O(logn)。但是，它带来了查找 search，以及有序操作 first，last，headSet，tailSet 的高效。
 
 ## 双指针 Two Pointer
 
