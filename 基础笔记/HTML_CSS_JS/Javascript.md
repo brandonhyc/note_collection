@@ -1,5 +1,5 @@
 
-# JavaScript Declarations, Initialization and Hoisting
+# JS Declarations, Initialization and Hoisting
 1. Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope
 2. JavaScript only hoists declarations, not initialization
 
@@ -86,7 +86,81 @@ https://segmentfault.com/a/1190000003810652
     var square = new Square(2);
 
 ````
+# AJAX
+### 什么是AJAX? 
+Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。假如我们使用Form, 用户submit后会出现白页, 等待返回并刷新网页, 可能会很慢, 有不好的用户体验. 如果采用ajax, 用户可以停留在当前页, 在返回数据后再用js刷新数据, 体验会好很多.
 
+### XMLHttpRequest对象
+过去 AJAX 主要依靠 XMLHttpRequest对象实现的:
+```js
+"use strict"
+let request = new XMLHttpRequest();
+request.onreadystatechange = requestReadyCallback;
+request.open('GET', '/api/categories');
+request.send();
+
+function requestReadyCallback() {
+    requestReady(success, fail);
+
+    function requestReady(success, fail) {
+        if (request.readyState == 4) {
+            (request.status === 200) ? 
+                success(request.responseText) : fail(request.status);
+        } else {
+            console.log("HTTP request: still waiting for response ")
+        }
+    };
+
+    function success(text) {
+        let textarea = document.querySelector("#test-response-text");
+        textarea.value = text;
+    }
+    function fail(code) {
+        let textarea = document.querySelector("#test-response-text");
+        textarea.value = 'Error code: ' + code;
+    }
+}
+
+
+```
+
+参考: JS教程, AJAX, 廖雪峰 https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499861493e7c35be5e0864769a2c06afb4754acc6000
+
+
+## 跨域
+
+### 安全限制
+进行跨域URL请求, 无效. 这是因为默认情况下，JavaScript 在发送AJAX请求时，URL的域名必须和当前页面完全一致。<br>
+非跨域, 即要求以下相同 n级域名(www), http协议(https不同), 端口号.
+* 一是FLASH
+* 二是通过在同源域名下架设一个代理服务器来转发，JavaScript负责把请求发送到代理服务器. 弊端是涉及后端开发.
+```
+'/proxy?url=http://www.sina.com.cn'
+```
+* 三是JSONP，限制是只能用GET请求，并且要求返回JavaScript。利用script可以跨域加载的方式. 
+* 四是CORS, 全称Cross-Origin Resource Sharing，HTML5的跨域新规范。也要求后端开发.
+
+
+### JSONP
+```html
+<body>
+    <button onclick="updateData()">点</button>
+    <p id="test-jsonp">假如成功的话, 这里更新</p>
+</body>
+<script>
+    function refreshPrice(data) { // callback function
+        var p = document.getElementById('test-jsonp');
+        p.innerHTML = '当前价格：' + data['1399001'].name + ': ' + data['1399001'].price;
+    }
+    function updateData() {
+        // dynamically insert script. Two functions by using this: 
+        // 1. fetch data from api 2. callback(refreshPrice) 
+        var js = document.createElement('script'), head = document.getElementsByTagName('head')[0];
+        js.src = 'http://api.money.126.net/data/feed/0000001,1399001?callback=refreshPrice';
+        head.appendChild(js);
+    }
+</script>
+```
 
 # Promise
 
