@@ -23,11 +23,11 @@ public class Solution {
             return str.length() == 0;
         }
         char patternIndex = pattern.charAt(0);
-        String word = map.get(patternIndex);
-
+        String word;
         if (map.containsKey(patternIndex)) {
+            word = map.get(patternIndex);
             // if contains
-            if (!str.startsWith(map.get(patternIndex))) {
+            if (!str.startsWith(word)) {   
                 return false;
             }
             return match(pattern.substring(1), str.substring(word.length()), map);
@@ -35,7 +35,7 @@ public class Solution {
 
         // else: do not contains
         for (int i = 0; i < str.length(); i++) {
-            word = str.substring(i);
+            word = str.substring(0, i + 1);
             if (map.containsValue(word)) {
                 continue;
             }
