@@ -1,3 +1,7 @@
+# JS 强制转化
+
+
+
 
 # JS Declarations, Initialization and Hoisting
 1. Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope
@@ -18,12 +22,23 @@ elem.innerHTML = x + " " + y;           // Display x and y
 y = 7;    // Assign 7 to y
 //Result: 5, undefined
 ```
+# 闭包 Closure
+定义一个函数能够读取其他函数内部变量的函数和该函数的创建环境. 
+一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在。
+闭包的另一个用处，是封装对象的私有属性和私有方法。
 
 # JS PROTOTYPE
 
-### 闭包 Closure
-一个是前面提到的可以读取函数内部的变量， private variable
-另一个就是让这些变量的值始终保持在内存中
+
+# IIFE
+定义一个IIFE如下. 
+```javascript
+(function () {
+  var tmp = 10;
+  processData(tmp);
+  storeData(tmp);
+}());
+```
 
 
 ### fetch
