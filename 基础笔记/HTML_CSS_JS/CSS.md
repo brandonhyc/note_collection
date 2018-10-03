@@ -1,5 +1,38 @@
 # CSS
 
+### what's the benefits using external stylesheet
+1. everything is stored within a single file.
+2. once changed/updated, the changes are reflected on all other referenced pages
+3. pages load quicker once the main CSS file has been cached.
+
+### form template
+https://jsfiddle.net/brandonhyc/aq9Laaew/242039/
+
+## Selectors
+* Universal selector *
+* Descendent selector > / child selector
+* class/id selector
+* attribute selector [] 
+* pseudo selector :
+
+### 必考 What is the difference between descendent selector and child selector
+ _ selector selects all the decedent elements, it does not need to be the immediate child element. > Child selector only select the immediate child element
+
+### pseudo selector
+it is used for selecting a special state of a element. for example, there are :hover, :link/:visited
+
+### 不考切鸡鸡 order of <a> pseudo class
+ a:link -> a:visited -> a:hover -> a:active
+
+### CSS what is the default media type
+Media query is for defining different style rules for different media types
+all/print/screen/speech. The default type is "all"
+
+### 可能考 How to set freezed image background
+Background-attachment: fixed;
+
+### how to use single border in table
+border-collapse: collapse || separate
 
 ## CSS Box model
 box-sizing: content-box / border-box
@@ -83,9 +116,7 @@ To style specified parts of an element.
 * The @charset rule indicates the character set the style sheet uses.
 * The @font-face rule is used to exhaustively describe a font face for use in a document.
 
-## CSS media type
-To make it possible to define different style rules for different media types
-all/print/screen/speech	
+
 ```css
 /* When the width is between 600px and 900px OR above 1100px - change the appearance of <div> */
 @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {

@@ -1,4 +1,7 @@
-### What is Http?
+### what is url
+It's the unique identification of resources
+
+### What is HTTP?
 HTTP is a web's application-layer protocol for transferring different forms of data between client and server. 
 
 ### 必考 HTTP features: connectionless, stateless, transferring different forms of data

@@ -25,7 +25,7 @@ public class Solution {
 
     private void dfs(String end, List<List<String>> results, 
                     List<String> path, Map<String, Integer> distance,
-                    Map<String, List<String> map,
+                    Map<String, List<String>> map,
                     String crt) {
 
         if (crt.equals(end)) {
@@ -34,9 +34,9 @@ public class Solution {
             path.remove(crt);
             return;
         }
-        ArrayList<String> = map.get(crt);
+        ArrayList<String> nextList= map.get(crt);
 
-        for (String next: ) {
+        for (String next: nextList) {
             if (!distance.containsKey(next)) {
                 continue;
             }
