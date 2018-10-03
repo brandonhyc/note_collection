@@ -34,6 +34,8 @@ str.toCharArray();
 // 2. output: ['a', 'b', 'c']
 str.charAt(str.length() - 1);
 // 3. output: "ab"
+String b = new String(a); // char[] a = {'a','b'}; 
+// 4. char Array to String
 ```
 
 ### Char to Int

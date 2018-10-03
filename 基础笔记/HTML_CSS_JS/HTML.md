@@ -1,10 +1,42 @@
 # HTML
 
-## HTML template    
+### doctype tag
+The Instruction for using HTML5
+
+### 必考 inline Element vs Block Element
+Block element:- it breaks the default flow and it covers the whole width of the page and brings the next content into next line<br>
+inline element :- default flow of placing content of the browser - left to right, it will cover the width as the width of the content<br>
+display: inline/block
+
+### Uses of HTML
+Publish online documents with headings, texts, tables, lists, photos, etc.
+Retrieve online information via hypertext links.
+Design forms for conducting transactions with remote services, for use in
+searching for information, making reservations, ordering products, etc.
+
 
 ## HTML Entities Symbols
 Some reserved characters can be replaced by some with character entities in HTML
 
+## Unordered List
+### Unordered List example 
+```
+<ul>
+    <li></li>
+    <li></li>
+</ul>
+```
+### How to set no disc style list
+set list-style-type: none
+
+## Ordered List 
+### Ordered List example
+
+### How to set numbered order
+set type="A" / type="1"
+
+### How to set length of <HR>
+width=100%
 
 # Bootstrap
 
@@ -48,8 +80,7 @@ cookies 是为了标识用户身份而存储在用户本地终端上的数据，
 cookie过期时间之前一直有效，即使窗口关闭。sessionstorage 窗口关闭失效。localstorage 用作长久数据保存。
 
 
-5. doctype tag
-it is an instruction to the web browser about what version of the markup language the page is written in
+
 
 6. Why is it generally a good idea to position CSS < link> between < head>< /head> and JS < script> just before < /body>? 
 You usually put the < link> tags in between the < head> to prevent __Flash of Unstyled Content__ which gives the user something to look at while the rest of the page is being parsed.
