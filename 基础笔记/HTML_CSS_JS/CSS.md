@@ -10,7 +10,7 @@ https://jsfiddle.net/brandonhyc/aq9Laaew/242039/
 
 ## Selectors
 * Universal selector *
-* Descendent selector > / child selector
+* Descendent selector > / child selector _
 * class/id selector
 * attribute selector [] 
 * pseudo selector :
@@ -34,7 +34,30 @@ Background-attachment: fixed;
 ### how to use single border in table
 border-collapse: collapse || separate
 
-## CSS Box model
+### What is the used of Overflow
+Control the text in container. overflow: visible / hidden / scroll / auto 
+
+### visibility: visible -> hidden vs display: none 
+the first one will become blank, and the space will be taken. elment display: none will disappear.
+
+### 必考 inline Element vs Block Element
+Block element:- it breaks the default flow and it covers the whole width of the page and brings the next content into next line<br>
+inline element :- default flow of placing content of the browser - left to right, it will cover the width as the width of the content<br>
+Inline-block: 不独占一行, 可以设置height;<br>
+display: inline/block/inline-block
+
+### Box model 必考
+/////margin////
+/~~~~border~~~/
+/~x padding x~/
+/~x---------x~/
+/~x|content|x~/
+/~x---------x~/
+/~xxxxxxxxxxx~/
+/~~~~~~~~~~~~~/
+///////////////
+
+## CSS Box Sizing
 box-sizing: content-box / border-box
 ### content-box (default)
 Width and Height are applied to only the content area <br>
@@ -146,7 +169,7 @@ To style specified parts of an element.
     * static: it is always positioned according to the normal flow of the page. 
     * fixed: it always stays in the same place even if the page is scrolled *NOT KEEP SPACE*
     * relative: it is positioned relative to its normal position. *KEEP SPACE*
-    * absolute: is positioned relative to the nearest positioned ancestor *NOT KEEP SPACE* (instead of positioned relative to the viewport, like fixed).
+    * absolute: is positioned relative to parent element positioned ancestor *NOT KEEP SPACE* (instead of positioned relative to the viewport, like fixed).
     * sticky/: An element with position: sticky; is positioned based on the user's scroll position.
 
 
@@ -159,7 +182,7 @@ To style specified parts of an element.
 2) 块级元素可以设置 width, height属性，行内元素设置width, height无效【注意：块级元素即使设置了宽度，仍然是独占一行的】
 3) 块级元素可以设置margin 和 padding. 行内元素的水平方向的padding-left/right,margin-left/right 都产生边距效果，
     但是竖直方向的padding-top,padding-bottom,margin-top,margin-bottom都不会产生边距效果。（水平方向有效，竖直方向无效）
-Inline-block: 不独占一行, 可以设置height;
+
  
 
 4. 居中方法

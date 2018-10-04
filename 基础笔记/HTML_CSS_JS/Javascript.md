@@ -1,11 +1,11 @@
 # JS 强制转化
 
+### Where to put <script> tag?
+Either head or body. But if it is linked to DOM, we have to put it within or after body.  
 
-
-
-# JS Declarations, Initialization and Hoisting
-1. Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope
-2. JavaScript only hoists declarations, not initialization
+### 必考 JS Declarations, Initialization and Hoisting
+1. Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope. Function can be called before defines.
+2. JavaScript only hoists declarations, not initialization (literal expression)
 
 ```javascript
 x = 5; // Assign 5 to x
@@ -22,14 +22,14 @@ elem.innerHTML = x + " " + y;           // Display x and y
 y = 7;    // Assign 7 to y
 //Result: 5, undefined
 ```
-# 闭包 Closure
+### 必考 闭包 Closure
+An inner function always has assess to all parameters(scope) of the outer function 
+
 定义一个函数能够读取其他函数内部变量的函数和该函数的创建环境. 
 一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在。
 闭包的另一个用处，是封装对象的私有属性和私有方法。
 
 # JS PROTOTYPE
-
-
 # IIFE
 定义一个IIFE如下. 
 ```javascript
@@ -39,7 +39,6 @@ y = 7;    // Assign 7 to y
   storeData(tmp);
 }());
 ```
-
 
 ### fetch
 https://segmentfault.com/a/1190000003810652
@@ -101,6 +100,7 @@ https://segmentfault.com/a/1190000003810652
     var square = new Square(2);
 
 ````
+
 # AJAX
 ### 什么是AJAX? 
 Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。假如我们使用Form, 用户submit后会出现白页, 等待返回并刷新网页, 可能会很慢, 有不好的用户体验. 如果采用ajax, 用户可以停留在当前页, 在返回数据后再用js刷新数据, 体验会好很多.

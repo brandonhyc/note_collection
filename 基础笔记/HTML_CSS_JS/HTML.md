@@ -3,17 +3,17 @@
 ### doctype tag
 The Instruction for using HTML5
 
-### 必考 inline Element vs Block Element
-Block element:- it breaks the default flow and it covers the whole width of the page and brings the next content into next line<br>
-inline element :- default flow of placing content of the browser - left to right, it will cover the width as the width of the content<br>
-display: inline/block
-
 ### Uses of HTML
 Publish online documents with headings, texts, tables, lists, photos, etc.
 Retrieve online information via hypertext links.
 Design forms for conducting transactions with remote services, for use in
 searching for information, making reservations, ordering products, etc.
 
+## <a> uses
+### How to set an email link
+href="mailto:xxxx@yahoo.com"
+### <a> what is the use of target?
+*target="_self"* by default, *target="_blank"* start a new page
 
 ## HTML Entities Symbols
 Some reserved characters can be replaced by some with character entities in HTML
@@ -37,6 +37,11 @@ set type="A" / type="1"
 
 ### How to set length of <HR>
 width=100%
+
+### default TABLE has no borders, Set border="1"
+
+### Difference between SUBMIT and BUTTON
+SUBMIT button triggers sending the form. BUTTON can be used differently  
 
 # Bootstrap
 
