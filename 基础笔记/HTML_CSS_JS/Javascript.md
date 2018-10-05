@@ -1,3 +1,27 @@
+### Pros and Cons of JS
+Pros: less server interaction, increase interactive; Cons:  file support in client size. no mutithreading capability
+
+## what is event
+The event is created when the user or browser manipulate the page. g.g.: onload, onclick
+### How to use addEventListener
+```js
+// <input type="button" id="a" />
+var ele = document.getElementById("a");
+ele.addEventListener(function() {
+    console.log("clicked");
+});
+```
+### onkeydown, onkeypress, onkeyup
+onkeydown is when key is press, onkeyup is when key is release and onkeypress is pressed and release
+
+
+### Array modification
+1. push/pop, modify from the back
+2. unshift/shift, modify from the front
+3. splice/slice, splice to remove in-place, slice is substring
+
+
+
 # JS 强制转化
 
 ### Where to put <script> tag?
@@ -28,6 +52,10 @@ An inner function always has assess to all parameters(scope) of the outer functi
 定义一个函数能够读取其他函数内部变量的函数和该函数的创建环境. 
 一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在。
 闭包的另一个用处，是封装对象的私有属性和私有方法。
+
+
+### How to use onKeypress
+
 
 # JS PROTOTYPE
 # IIFE

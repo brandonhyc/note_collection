@@ -7,10 +7,12 @@
 
 ### form template
 https://jsfiddle.net/brandonhyc/aq9Laaew/242039/
+### how to use single border in table
+border-collapse: collapse || separate
 
 ## Selectors
 * Universal selector *
-* Descendent selector > / child selector _
+* Descendent selector > | child selector _
 * class/id selector
 * attribute selector [] 
 * pseudo selector :
@@ -30,9 +32,6 @@ all/print/screen/speech. The default type is "all"
 
 ### 可能考 How to set freezed image background
 Background-attachment: fixed;
-
-### how to use single border in table
-border-collapse: collapse || separate
 
 ### What is the used of Overflow
 Control the text in container. overflow: visible / hidden / scroll / auto 

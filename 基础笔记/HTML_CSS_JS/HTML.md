@@ -36,7 +36,7 @@ set list-style-type: none
 set type="A" / type="1"
 
 ### How to set length of <HR>
-width=100%
+width=50%
 
 ### default TABLE has no borders, Set border="1"
 
