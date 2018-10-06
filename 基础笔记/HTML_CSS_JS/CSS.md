@@ -10,6 +10,8 @@ https://jsfiddle.net/brandonhyc/aq9Laaew/242039/
 ### how to use single border in table
 border-collapse: collapse || separate
 
+### default TABLE has no borders, Set border="1"
+
 ## Selectors
 * Universal selector *
 * Descendent selector > | child selector _

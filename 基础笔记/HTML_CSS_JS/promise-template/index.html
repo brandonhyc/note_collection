@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <div class="container">
+        <h1>promise-test</h1>
+
+        <div class="form">
+            <form action="#" id="user-signUp-component">
+                <table border="1" style="border-collapse: collapse">
+                    <caption>Sign Up</caption>
+                    <tr><th></th><th></th></tr>
+                    <tr><td>title</td><td><input name="title" type="text" /></td></tr>
+                    <tr><td>user id</td><td><input name="userId" type="text"></td></tr>
+                    <tr><td>Gender</td><td>male<input type="radio" name="gender" value="male" id="">
+                                            <input type="radio" name="gender" value="female" id="">
+                                    </td></tr>
+                    <tr><td>Country</td><td><select name="country" id="">
+                                                <option value="1">dc</option>
+                                                <option value="2">va</option>
+                                            </select></td></tr>
+                    <tr><td>textarea</td><td><textarea name="body" id="" cols="10" rows="10"></textarea></td></tr>
+                    <tr><td>photo</td><td><input type="file" name="photo" id=""></td></tr>
+                    <tr><td>left</td><td>right</td></tr>
+                    
+                </table>
+                <div class="get-component">
+                    <input id="url-input" type="text" placeholder="url" value="" /><label for="URL"></label>
+                    <input id="get-btn" type="button" onclick="" value="get" />
+                    <input id="post-btn" type="button" onclick="" value="post" />
+                    <div id="display-plane">
+                        <p>url = "http://jsonplaceholder.typicode.com/posts";</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+    <script src="main.js"></script>
+    <script src="services/httpService.js"></script>
+    <script src="controllers/postController.js"></script>
+</html>
