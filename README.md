@@ -33,10 +33,15 @@ HashSet 以哈希表实现。插入的元素是无序的。add，remove 和 cont
 TreeSet 以红黑树实现。插入的元素由树结构保持了顺序。add，remove 和 contains 都是对数时间复杂度 O(logn)。但是，它带来了查找 search，以及有序操作 first，last，headSet，tailSet 的高效。
 
 
-## 哈希表 HashSet
+## 哈希表 Hash Table
 * (Keys) => hash function -> put in buckets 
 * 时间复杂度 O(sizeOfKey ~~ 1)
-* Collision: 1. open hashing: linkedList.add(new) / travels;  2. close hashing 
+* Collision: 1. (more common) open hashing: linkedList.add(new) / travels;  2. close hashing 
+* Rehashing: 当 n(包括链内的元素个数) > 10% capacity, 进行扩容. 过程为遍历所有元素再hash计算.
+
+## % 取余操作
+ a % b = (a % b + b) % b
+
 
 ## 双指针 Two Pointer
 
