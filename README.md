@@ -40,8 +40,11 @@ TreeSet 以红黑树实现。插入的元素由树结构保持了顺序。add，
 * Rehashing: 当 n(包括链内的元素个数) > 10% capacity, 进行扩容. 过程为遍历所有元素再hash计算.
 
 ## % 取余操作
- a % b = (a % b + b) % b
+* 负数取余 a % b = (a % b + b) % b
 
+
+### 堆 Heap 
+* 时间复杂度 add(): logn, poll(): logn, min/max: O(1)
 
 ## 双指针 Two Pointer
 
