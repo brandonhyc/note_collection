@@ -8,14 +8,14 @@
 ### form template
 https://jsfiddle.net/brandonhyc/aq9Laaew/242039/
 ### how to use single border in table
-border-collapse: collapse || separate
+set css border-collapse: collapse || separate
 
 ### default TABLE has no borders, Set border="1"
 
 ## Selectors
 * Universal selector *
-* Descendent selector > | child selector _
-* class/id selector
+* Descendent selector _ | child selector >
+* class/id selector . #
 * attribute selector [] 
 * pseudo selector :
 
@@ -25,7 +25,7 @@ border-collapse: collapse || separate
 ### pseudo selector
 it is used for selecting a special state of a element. for example, there are :hover, :link/:visited
 
-### 不考切鸡鸡 order of <a> pseudo class
+### 可能考 order of <a> pseudo class
  a:link -> a:visited -> a:hover -> a:active
 
 ### CSS what is the default media type

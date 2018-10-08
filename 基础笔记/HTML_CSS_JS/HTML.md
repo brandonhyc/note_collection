@@ -38,7 +38,6 @@ set type="A" / type="1"
 ### How to set length of <HR>
 width=50%
 
-
 ### Difference between SUBMIT and BUTTON
 SUBMIT button triggers sending the form. BUTTON can be used differently  
 
