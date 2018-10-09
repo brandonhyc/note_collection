@@ -7,6 +7,7 @@ var setB = new Set();
 tableA.forEach((el) => initListA(el, setA, setB));
 tableB.forEach((el) => initListB(el, setA, setB));
 
+
 function swap(el, setA, setB) {
     debugger
     var text = el.querySelector("td").textContent;
@@ -44,5 +45,3 @@ function initListB(el, setA, setB) {
         swap(el, setA, setB)
     });
 }
-
-
