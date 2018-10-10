@@ -20,15 +20,19 @@ onkeydown is when key is press, onkeyup is when key is release and onkeypress is
 2. unshift/shift, modify from the front
 3. splice/slice, splice to remove in-place, slice is substring
 
-
-
-# JS 强制转化
-
 ### Where to put <script> tag?
 Either head or body. But if it is linked to DOM, we have to put it within or after body.  
 
+### What is block scope, local scope, global scope
+* The block scope refers to if/for block where have access to all declared variable within it.
+* The local scope refers to function block where have access to all declared variable within it.
+* The global scope refers to variables can be read in local scope.
+
+### 必考 let vs var
+var can be read outside the block scope, let can be only read within a block scope. In strict mode, let can't redeclare, but var can.
+
 ### 必考 JS Declarations, Initialization and Hoisting
-1. Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope. Function can be called before defines.
+1. Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope. Function can be called before the declaration.
 2. JavaScript only hoists declarations, not initialization (literal expression)
 
 ```javascript
@@ -53,9 +57,8 @@ An inner function always has assess to all parameters(scope) of the outer functi
 一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在。
 闭包的另一个用处，是封装对象的私有属性和私有方法。
 
-
-### How to use onKeypress
-
+### 必考 What is Cookie, and fields
+In stateless HTTP protocol, web pages using Cookie to maintain session information among pages to track user behaviors. 5 fields, expire, domain, path, secure, key/value pairs
 
 # JS PROTOTYPE
 # IIFE
@@ -131,7 +134,9 @@ https://segmentfault.com/a/1190000003810652
 
 # AJAX
 ### 什么是AJAX? 
-Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。假如我们使用Form, 用户submit后会出现白页, 等待返回并刷新网页, 可能会很慢, 有不好的用户体验. 如果采用ajax, 用户可以停留在当前页, 在返回数据后再用js刷新数据, 体验会好很多.
+Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。
+
+假如我们使用Form, 用户submit后会出现白页, 等待返回并刷新网页, 可能会很慢, 有不好的用户体验. 如果采用ajax,用户可以停留在当前页, 在返回数据后再用js刷新数据, 体验会好很多.
 
 ### XMLHttpRequest对象
 过去 AJAX 主要依靠 XMLHttpRequest对象实现的:
