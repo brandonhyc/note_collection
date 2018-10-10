@@ -60,6 +60,10 @@ An inner function always has assess to all parameters(scope) of the outer functi
 ### 必考 What is Cookie, and fields
 In stateless HTTP protocol, web pages using Cookie to maintain session information among pages to track user behaviors. 5 fields, expire, domain, path, secure, key/value pairs
 
+### JSON
+JSON is a format for storing and exchanging data, easy to read and write for human and generate and parse by machine.
+
+
 # JS PROTOTYPE
 # IIFE
 定义一个IIFE如下. 
