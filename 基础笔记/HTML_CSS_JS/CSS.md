@@ -7,6 +7,7 @@
 
 ### form template
 https://jsfiddle.net/brandonhyc/aq9Laaew/242039/
+
 ### how to use single border in table
 set css border-collapse: collapse || separate
 
@@ -25,7 +26,7 @@ set css border-collapse: collapse || separate
 ### pseudo selector
 it is used for selecting a special state of a element. for example, there are :hover, :link/:visited
 
-### 可能考 order of <a> pseudo class
+### order of <a> pseudo class
  a:link -> a:visited -> a:hover -> a:active
 
 ### CSS what is the default media type
@@ -85,6 +86,9 @@ the space width = width + margin * 2<br>
 1. inline < p style=""> 
 2. embedded < style> 
 3. external/import < link/> 
+
+### Grid System
+CSS Grid Layout is used for responsive web app. The web app display different layout in different screen size devices. The grid system divides a page into major regions or defining the relationship in terms of size
 
 ## CSS Common units
 

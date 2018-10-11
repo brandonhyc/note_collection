@@ -3,11 +3,26 @@
 ### doctype tag
 The Instruction for using HTML5
 
+### 必考 HTML5有哪些新特性
+    1. new Api: Geolocation, drag, drop
+    2. friendly Elements:  article footer header nav section
+    3. new elements: canvas, video, audio
+    4. localStorage, sessionStorage
+    5. simplified syntax
+
+### HTML4 vs HTML5
+remove: ``` font, basefont, big, strike, center, tt, frame, noframes, frameset ```<br>
+new: ```nav, article, section, footer, header, audio, video, canvas, figure, datalist ```
+
 ### Uses of HTML
 Publish online documents with headings, texts, tables, lists, photos, etc.
 Retrieve online information via hypertext links.
 Design forms for conducting transactions with remote services, for use in
 searching for information, making reservations, ordering products, etc.
+
+### uses of <meta>
+meta tag is for setting up the metadata for html document. It can be used to set up the viewport which is user's visible area.
+
 
 ## <a> uses
 ### How to set an email link
@@ -70,18 +85,9 @@ default settings:
 ## 常见面试难点
 
 
-2. HTML5有哪些新特性
-    
-    1. new Api: Geolocation, drag, drop
-    2. friendly Elements:  article footer header nav section
-    3. new elements: canvas, video, audio
-    4. localStorage, sessionStorage
-    5. web worker..
-
 3. cookies，sessionStorage 和 localStorage 的区别？
 cookies 是为了标识用户身份而存储在用户本地终端上的数据，始终在同源http请求中携带，即cookies在浏览器和服务器间来回传递，而sessionstorage和localstorage 不会自动把数据发给服务器，仅在本地保存。
 cookie过期时间之前一直有效，即使窗口关闭。sessionstorage 窗口关闭失效。localstorage 用作长久数据保存。
-
 
 
 

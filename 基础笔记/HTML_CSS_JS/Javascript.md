@@ -57,7 +57,7 @@ An inner function always has assess to all parameters(scope) of the outer functi
 一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在。
 闭包的另一个用处，是封装对象的私有属性和私有方法。
 
-### 必考 What is Cookie, and fields
+### What is Cookie, and fields
 In stateless HTTP protocol, web pages using Cookie to maintain session information among pages to track user behaviors. 5 fields, expire, domain, path, secure, key/value pairs
 
 ### JSON
