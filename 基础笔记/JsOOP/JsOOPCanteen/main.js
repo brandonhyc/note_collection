@@ -53,7 +53,7 @@ Staff.prototype = {
     id : null
 }
 Staff.prototype.work = function () {
-    
+    console.log("working");
 }
 
 /** 服务员类，继承自职员
@@ -62,15 +62,16 @@ Staff.prototype.work = function () {
 * 完成一次工作：烹饪出菜品 
 */
 function Waiter() {
-    this.name = name;
-    this.salary = salary;
+    // this.name = name;
+    // this.salary = salary;
 }
 var waiterProto = new Staff(null, null);
 
 Waiter.prototype = waiterProto;
-Waiter.prototype.constructor = function (name, salary) {
+Waiter.prototype.constructor = function (name, salary, age) {
     this.name = name;
     this.salary = salary;
+    this.age = age;
 }
 
 Waiter.prototype.work = function (item) {
@@ -137,7 +138,10 @@ var ifeRestaurant = new Canteen({
 });
 
 var newCook = new Cook("Tony", 10000);
-ifeRestaurant.hire(newCook);
+// ifeRestaurant.hire(newCook);
 
-ifeRestaurant.fire(newCook);
-console.log(ifeRestaurant.staff);
+// ifeRestaurant.fire(newCook);
+// console.log(ifeRestaurant.staff);
+
+var newWaiter = new Waiter("TOny", 2000, 30);
+console.log(newWaiter);

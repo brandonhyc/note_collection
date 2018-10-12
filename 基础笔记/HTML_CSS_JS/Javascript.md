@@ -1,5 +1,5 @@
 ### Pros and Cons of JS
-Pros: less server interaction, increase interactive; Cons:  file support in client size. no mutithreading capability
+Pros: less server interaction, increase interactive; Cons: file support in client size. no mutithreading capability
 
 ## what is event
 The event is created when the user or browser manipulate the page. g.g.: onload, onclick

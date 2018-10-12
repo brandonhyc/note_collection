@@ -40,7 +40,7 @@ Background-attachment: fixed;
 Control the text in container. overflow: visible / hidden / scroll / auto 
 
 ### visibility: visible -> hidden vs display: none 
-the first one will become blank, and the space will be taken. elment display: none will disappear.
+the first one will become blank, and the space will be taken. element display: none will disappear.
 
 ### 必考 inline Element vs Block Element
 Block element:- it breaks the default flow and it covers the whole width of the page and brings the next content into next line<br>

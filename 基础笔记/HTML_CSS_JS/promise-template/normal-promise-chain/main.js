@@ -19,6 +19,7 @@ function main() {
             return sec;
         }).then((sec) => {
             timeTwo.textContent = sec;
+            
             return sec + 4;
         }).then((sec) => {
             timeThree.textContent = sec;
