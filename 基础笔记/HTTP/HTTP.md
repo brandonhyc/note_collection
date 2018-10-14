@@ -17,7 +17,7 @@ IP is the a unique numerical label assigned for each device within a computer ne
 
 ### Non-persistent connection and persistent connection
 1. In non-persistent connection, each request/response pair are sent over separate TCP connection
-2. In persistent connection, all of requests and their responses are sent over the same TCP connection  
+2. In persistent connection, all of requests and their responses are sent over the same TCP connection
 
 ## 必考 HTTP Request Message
 Request line + subsequent Header lines + [] + Entity Body. <br>
