@@ -1,0 +1,23 @@
+* {
+  margin: 1vw;
+  border: 1vw;
+  padding: 1vw;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.bubbling,
+.capturing,
+.prevent {
+  background-color: darkgray;
+  flex: 1;
+}
+form {
+  background-color: bisque;
+  text-align: center;
+}
+p {
+  margin: 0;
+  padding: 0;
+}

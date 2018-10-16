@@ -1,0 +1,27 @@
+.btn {
+  background-color: #A20000;
+  padding: 10px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 13px;
+}
+.danger-btn {
+  background-color: #A20000;
+  padding: 10px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 13px;
+  background-color: white;
+}
+.container p {
+  font-family: Calibri;
+  font-size: 20px;
+  color: red;
+}
+.container h1 {
+  text-decoration: underline;
+  font-size: 30px;
+}
+div p {
+  color: #A20000;
+}

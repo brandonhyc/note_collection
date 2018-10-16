@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    
+    <div class="container" >
+
+        <div class="capturing">
+            capturing: (HTML → BODY → DIV) → DIV → FORM → INPUT;
+            
+            <form action="" class="mid" onclick="">
+                    <input type="button" value="click" onclick="">
+            </form>
+        </div>
+            
+        <div class="bubbling" onclick="alert('div');">
+                    bubbling: INPUT → FORM → DIV → (DIV → BODY → HTML)
+            <form action="" class="mid" onclick="alert('form');">
+                    <input type="button" value="click" onclick="alert('btn');">
+            </form>
+        </div>
+
+        <div class="bubbling prevent" onclick="">
+            <p>prevent: INPUT → X;</p>
+            <p style="color: red">event.target always = the deepest element</p>
+              
+            <form action="" class="mid" onclick="">
+                <input type="button" value="click" onclick="event.stopPropagation(); alert('ONLY button')">
+            </form>
+        </div>
+    </div>
+        
+        <script src="main.js"></script>
+</body>
+</html>
