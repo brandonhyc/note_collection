@@ -1,0 +1,42 @@
+@greenColor: #A20000;
+@btnPadding: 10px;
+@btnColor: white;
+
+@radius: 10px;
+
+.btn {
+    background-color: @greenColor;
+    padding: @btnPadding;
+    color: @btnColor;
+    .border-radius(15px);
+}
+
+// using mixins;
+
+.border-radius(@radius) {
+    border: 1px solid black;
+    border-radius: @radius;
+}
+
+
+.danger-btn {
+    .btn;
+    background-color: @danger;
+}
+
+.container {
+    p {
+        font-family: Calibri;
+        font-size: 20px;
+        color: red;
+    }
+    h1 {
+        text-decoration: underline;
+        font-size: 30px;
+    }
+}
+
+
+div p {
+    color: @greenColor;
+}
