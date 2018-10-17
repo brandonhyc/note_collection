@@ -5,6 +5,9 @@
 * destruction
 * array apis
 * CLASS
+* The spread operator -... for 1. array/string (iterable) 2. rest parameters
+* Function default value function (str = 'string'){};
+* Abstract Data Class: Map
 
 ### let /const and IIFEs
 
@@ -28,13 +31,20 @@ const {firstName, lastName} = obj;
 
 const {firstName: a, lastName: b} = obj;
 // a = 'John', b = 'Smith'
-
 ```
 
 ## Array 
-
+1. new constructor: var arr = Array.from(nodeCollection);
+2. new method find/findIndex: arr.findIndex(cur => cur > 0)
 
 ### [..."str"] parsing a string
+```js
+const number = [1,2,3];
+const str = "string";
+
+console.log([...number, 4, 5]);
+console.log([...'ne', 'w' , ...str]);
+```
 
 
 ### import and export
