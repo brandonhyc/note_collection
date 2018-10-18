@@ -12,12 +12,9 @@
 // 486. Merge K Sorted Arrays
 // 577. Merge K Sorted Interval Lists
 // 实质上是一个问题，均可以采用 v1, v2, v3 三种不一样的解法，每一道题目的每一种解法我都提供了代码
-// 喜欢的同学请点个赞吧！
-
 
 // Time Complexity: O(Nlogk) where k is the number of node list
 // 1. for each pop and inertion to the queue,  it's O(logk)
-
 
 /**
  * Definition for ListNode.
