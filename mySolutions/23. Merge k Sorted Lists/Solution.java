@@ -1,3 +1,24 @@
+// 三种不同的解法：
+// mergeHelper_v1_minHeap 小顶堆（优先队列）
+// mergeHelper_v2_Divide_Conquer 分治思想，递归
+// mergeHelper_v3_Non_Recursive 两两合并，非递归
+// 时间复杂度均为O(nlogk)
+
+// 相似题目1：104. Merge K Sorted Lists 链表形式的解法链接点击此处，见Roger的题解
+// 相似题目2：486. Merge K Sorted Arrays 数组形式的解法链接点击此处，见Roger的题解(非九章学员可能没有访问权限)
+
+// 三道题目
+// 104. Merge K Sorted Lists
+// 486. Merge K Sorted Arrays
+// 577. Merge K Sorted Interval Lists
+// 实质上是一个问题，均可以采用 v1, v2, v3 三种不一样的解法，每一道题目的每一种解法我都提供了代码
+// 喜欢的同学请点个赞吧！
+
+
+// Time Complexity: O(Nlogk) where k is the number of node list
+// 1. for each pop and inertion to the queue,  it's O(logk)
+
+
 /**
  * Definition for ListNode.
  * public class ListNode {
@@ -34,7 +55,7 @@ public class Solution {
         ListNode dummy = new ListNode(0);
         ListNode node = dummy;
         int size = minheap.size();
-        for (int i = 0; i < size ; i++) { // 5  8  6 11 12 7 
+        for (int i = 0; i < size ; i++) { 
             node.next = new ListNode(minheap.poll());
             node = node.next;
         }
