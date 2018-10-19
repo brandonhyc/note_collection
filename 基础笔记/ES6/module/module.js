@@ -1,9 +1,4 @@
-import {add} from './external.js'
-function add2(a, b) {
-    return add(a, b);
-}
+import { default as default_string} from './external.js' // = import default_string
+import { print, strA } from './external.js'
 
-add2(2, 3);
-document.body.appendChild(
-    document.createTextNode(
-        add2(2,3)));
+print(strA, default_string);

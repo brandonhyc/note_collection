@@ -1,6 +1,11 @@
-var add = function (a, b) {
-    console.log(`${ a + b }`);
-    return a + b;
+var strA = "stringA"
+var strB = "stringB_default"
+
+function print(strA, strB) {
+    document.body.appendChild(
+        document.createTextNode(`printing: ${strA}, also default ${strB}`));
+    console.log(`printing: ${strA}, also default ${strB}`);
 }
 
-export {add};
+export { strA, print };
+export { strB as default } ; // = export default strB
