@@ -1,3 +1,7 @@
+## 好文: 
+https://www.jianshu.com/u/4d7dd4c7e51d, es6必学必会module
+
+
 ### Difference
 * let/const
 * String methods
@@ -8,6 +12,7 @@
 * The spread operator -... for 1. array/string (iterable) 2. rest parameters
 * Function default value function (str = 'string'){};
 * Abstract Data Class: Map
+* module: import/export
 
 ### let /const and IIFEs
 
