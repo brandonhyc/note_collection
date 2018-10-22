@@ -1,3 +1,7 @@
+### 33 must-known concepts
+https://github.com/leonardomso/33-js-concepts
+
+
 ### Pros and Cons of JS
 Pros: less server interaction, increase interactive; Cons: file support in client size. no mutithreading capability
 
