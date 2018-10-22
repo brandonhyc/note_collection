@@ -10,17 +10,16 @@ public class Solution {
             return 0;
         }
 
-        int max = Integer.MIN_VALUE, 
-            sum = 0, 
-            minSum = 0;
-            
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
+        int minSum = 0;
+
         for (int i = 0; i < A.length; i++) {
             sum += A[i];
             max = Math.max(max, sum - minSum);
             minSum = Math.min(minSum, sum);
         }
+
         return max;
-
-
     }
 }
