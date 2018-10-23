@@ -34,7 +34,6 @@ export class ServersComponent implements OnInit {
   `]
 })
 export class ServersComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
@@ -79,4 +78,18 @@ export class ServersComponent implements OnInit {
 ### *ngFor="let server of servers"
 ```html
 <p *ngFor="let server of servers">Hello</p>
+```
+
+### @Input
+```ts
+------------------ hero-detail-component
+import { Hero } from '../hero';
+export class HeroDetailComponent implements OnInit {
+  @Input() hero: Hero;
+}
+// <div><span>id: </span>{{hero.id}}</div>
+                           ↑↑↑↑
+------------------ heros-component
+//<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+                    ↑↑↑↑
 ```
