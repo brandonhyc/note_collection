@@ -93,3 +93,4 @@ export class HeroDetailComponent implements OnInit {
 //<app-hero-detail [hero]="selectedHero"></app-hero-detail>
                     ↑↑↑↑
 ```
+

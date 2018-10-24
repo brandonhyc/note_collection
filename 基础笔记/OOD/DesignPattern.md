@@ -56,3 +56,27 @@ var module = (function () {
 })();
 
 ```
+
+### Singleton Pattern
+```js
+    var CircleGeneratorSingleton = (function () {
+        var instance;
+
+        function init() {
+            var _privateVariable = "a";
+
+            function _pos() {}
+            function create() {}
+            function add() {}
+            return {
+                create : create,
+                add : add
+            }
+        }
+    })
+
+    var cg = CircleGeneratorSingleton();
+    var circle = cg.create();
+
+    cg.add(circle);
+```
