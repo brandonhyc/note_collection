@@ -80,3 +80,24 @@ var module = (function () {
 
     cg.add(circle);
 ```
+
+
+### Factory Design Pattern
+easy for injection
+```js
+var RedCircle = function() {
+},
+    BlueCircle = function() {
+},  CircleFactory = function() {
+    this.create = function(color) {
+        if (color == 'blue') {
+            return new BlueCircle();
+        } else {
+            return new RedCircle();
+        }
+    }
+}
+
+_cf = new CircleFactory('blue');
+
+```
