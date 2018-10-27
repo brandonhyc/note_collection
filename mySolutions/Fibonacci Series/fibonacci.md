@@ -143,3 +143,6 @@ That is to say, for N-number summation, the time increase by logn. Time complexi
 
 ## Interview Challenge: find the last 6 digits of fib number in O(logn)
 (A + B) mod C = (A mod C + B mod C) mod C
+
+More (Program for Fibonacci numbers): https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
+Log(n) time explanation: https://kukuruku.co/post/the-nth-fibonacci-number-in-olog-n/
