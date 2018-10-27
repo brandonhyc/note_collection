@@ -94,3 +94,29 @@ export class HeroDetailComponent implements OnInit {
                     ↑↑↑↑
 ```
 
+### Routes
+
+```ts
+-------------------- app-routing.module.ts
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'detail/:id', component: HeroDetailComponent }
+]
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes)
+  ]
+})
+
+```
+```html
+------------------ Dashboard.html
+<a routerLink="/detail/{{ hero.id }}">
+
+------------------- app.module.html
+<router-outlet></router-outlet>
+```
