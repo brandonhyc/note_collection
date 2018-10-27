@@ -141,8 +141,62 @@ If we draw the tree of accumulation, then we can see the actual height is logn.
 That is to say, for N-number summation, the time increase by logn. Time complexity: O(logn)  
 ![alt text](./fibonacciMatrixTree.png)
 
-## Interview Challenge: find the last 6 digits of fib number in O(logn)
-(A + B) mod C = (A mod C + B mod C) mod C
+## Interview Challenge: find the last 4 digits of fib number in O(logn)
+mod summation formula:  
+**(A + B) mod C = (A mod C + B mod C) mod C**
+
+```java
+    public String lastFourDigitsOfFn(int n) {
+        
+        int[][] f = {{1, 1}, {1, 0}};
+
+        if (n == 0) return "0";
+
+        power(f, n-1);
+
+        String s = "" + f[0][0];
+
+        while (s.length() < 4) {
+            s = "0" + s;  
+        }
+
+        return s;
+    }
+
+    private static void power(int[][] f, int n) {
+        int[][] m = {{1, 1}, {1, 0}};
+
+        if (n == 1) return;
+
+        power(f, n/ 2);
+        multiply(f, f, 10000);
+
+        if (n %2 == 0) return;
+
+        multiply(f, m, 10000);
+        return;
+    }
+
+    private static void multiply(int[][] f1, int[][] f2, int n) {
+        
+        int x = (f1[0][0]*f2[0][0]%n + f1[0][1]*f2[1][0]%n) %n;
+        int y = (f1[0][0]*f2[0][1]%n + f1[0][1]*f2[1][1]%n) %n;
+        int p = (f1[1][0]*f2[0][0]%n + f1[1][1]*f2[1][0]%n) %n;
+        int q = (f1[1][0]*f2[0][1]%n + f1[1][1]*f2[1][1]%n) %n;
+
+        f1[0][0] = x;
+        f1[0][1] = y;
+        f1[1][0] = p;
+        f1[1][1] = q;
+
+        return;
+    }
+
+
+```
+
+
+
 
 More (Program for Fibonacci numbers): https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
 Log(n) time explanation: https://kukuruku.co/post/the-nth-fibonacci-number-in-olog-n/
