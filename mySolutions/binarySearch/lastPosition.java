@@ -6,7 +6,7 @@ public class Solution {
      */
     public int lastPosition(int[] nums, int target) {
         // write your code here
-// [1,2,2,4,5,5] 2
+        // [1,2,2,4,5,5] 2
         if (nums == null || nums.length == 0) {
             return -1;
         }
@@ -15,9 +15,7 @@ public class Solution {
         // System.out.printf("%s, t: %d\n 0  1  2  3  4  5  6  7  8  9  10\n________________________________\nstart(i/v), mid, end\n",Arrays.toString(nums), target);
         
         while (start + 1 < end) {
-            
             int mid = start + (end - start) / 2;//2
-
             // binarySearchPrintHelper(nums, start, end, mid, target);
 
             if (nums[mid] == target) { // 4 != 2 nums[mid] > target
@@ -30,13 +28,11 @@ public class Solution {
             if (nums[mid] < target) {
                 start = mid;
             }
-
         }
 
         if (nums[end] == target) {
             return end;
         }
-
         if (nums[start] == target) {
             return start;
         }
