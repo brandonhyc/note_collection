@@ -62,6 +62,10 @@ TreeSet 以红黑树实现。插入的元素由树结构保持了顺序。add，
 
 # 模板
 
+## Binary Search 二分法查找
+
+
+
 
 ## BTree
 ### Binary Tree Inorder Traversal

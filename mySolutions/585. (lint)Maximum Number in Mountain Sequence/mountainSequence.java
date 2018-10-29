@@ -1,3 +1,7 @@
+/** 
+    next: 162.Find Peak Element
+*/
+
 public class Solution {
     /**
      * @param nums: a mountain sequence which increase firstly and then decrease
