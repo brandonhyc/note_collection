@@ -46,3 +46,12 @@ function getRandomColor() {
     });
     return p;
 }
+
+function getRandom8Digits() {
+    var decimal = "0123456789"
+    var number = "";
+    for (let i = 0; i < 8; i++) {
+        number += decimal[Math.floor(Math.random() * 10)];
+    }
+    return number;
+}

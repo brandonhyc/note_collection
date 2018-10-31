@@ -87,10 +87,12 @@ import { Hero } from '../hero';
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
 }
-// <div><span>id: </span>{{hero.id}}</div>
+-- html
+<div><span>id: </span>{{hero.id}}</div>
                            ↑↑↑↑
 ------------------ heros-component
-//<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+-- html
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
                     ↑↑↑↑
 ```
 
