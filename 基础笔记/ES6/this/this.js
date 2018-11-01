@@ -33,11 +33,12 @@ var box6 = {
                 alert(str); // str undefined? why??
                 console.log('self: ', self); //Window
                 console.log('selfInsideClickMe: ', selfInsideClickMe); // Object
-                console.log('selfInsideEventListener: ', selfInsideEventListener); //Div
+                console.log('selfInsideEventListener: ', selfInsideEventListener); //Object
                 printElements(`'self: ', ${self.toString()}`);
                 printElements(`'selfInsideClickMe: ', ${selfInsideClickMe.toString()}`);
-                printElements(`'selfInsideEventListener: ', ${selfInsideEventListener.toString()}`);
-            });
+                printElements(`'selfInsideEventListener: ', ${selfInsideEventListener.toString()}, === selfInsideClickMe ? ${selfInsideClickMe === selfInsideEventListener}`);
+            }
+        );
     }
 }
 
