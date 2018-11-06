@@ -10,7 +10,6 @@ public class Solution {
         }
 
         int result = 0;
-        
         while (Math.pow(result + 1, 2) <= x) {
             int adder = 1;
             while (Math.pow((result + adder * 2), 2) <= x) {

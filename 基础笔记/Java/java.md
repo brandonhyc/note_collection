@@ -1,5 +1,35 @@
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
+### String, StringBuilder, StringBuffer
+StringBuffer is thread safe, only allow one thread at a time
+StringBuffer allows multiple thread at a time
+
+
+### abstract method
+?
+
+### polymorphism
+?
+
+
+
+### What is the difference between public, protected, package-private and private in Java?
+
+            │ Class │ Package │ Subclass │ Subclass │ World
+            │       │         │(same pkg)│(diff pkg)│ 
+────────────┼───────┼─────────┼──────────┼──────────┼────────
+public      │   +   │    +    │    +     │     +    │   +     
+────────────┼───────┼─────────┼──────────┼──────────┼────────
+protected   │   +   │    +    │    +     │     +    │         
+────────────┼───────┼─────────┼──────────┼──────────┼────────
+no modifier │   +   │    +    │    +     │          │    
+────────────┼───────┼─────────┼──────────┼──────────┼────────
+private     │   +   │         │          │          │    
+
++ : accessible
+blank : not accessible
+
+
 
 ## String vs StringBuilder vs StringBuffer
 |         | String               | StringBuilder                                      | StringBuffer                                       |
