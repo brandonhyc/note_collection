@@ -5,12 +5,12 @@ StringBuffer is thread safe, only allow one thread at a time
 StringBuffer allows multiple thread at a time
 
 
-### abstract method
-?
-
 ### polymorphism
-?
-
+    Salary s = new Salary();
+    Employee e = new Salary();
+    s.mailCheck();
+    e.mailCheck();
+at this time, s and e use the same method.
 
 
 ### What is the difference between public, protected, package-private and private in Java?
