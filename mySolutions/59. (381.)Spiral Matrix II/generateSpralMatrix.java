@@ -23,8 +23,10 @@ public class Solution {
             ny = y + dy[d];
             nx = x + dx[d];
 
-            if (nx < 0 || nx >= n || ny < 0 || ny >= n ||
+            if (nx < 0 || nx >= n || 
+                ny < 0 || ny >= n ||
                 res[ny][nx] != -1) {
+                    
                 d = (d + 1) % 4;
                 ny = y + dy[d];
                 nx = x + dx[d];
