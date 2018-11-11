@@ -68,6 +68,7 @@ var module = (function () {
             function _pos() {}
             function create() {}
             function add() {}
+            
             return {
                 create : create,
                 add : add

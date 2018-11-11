@@ -34,7 +34,7 @@ function main() {
 function generateTime() {
     var p = new Promise ((resolve, reject) => {
         resolve((new Date()).getSeconds());
-    }, 1000);
+    });
     return p;
 }
 
