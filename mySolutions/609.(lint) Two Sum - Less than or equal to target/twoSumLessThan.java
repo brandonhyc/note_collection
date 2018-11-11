@@ -12,13 +12,11 @@ public class Solution {
         }
 
         Arrays.sort(nums);
-
         int result = 0;
         int left = 0, right = nums.length - 1;
         while (left >= 0 && 
                 right < nums.length && 
                 left < right) {
-
                 if (nums[left] + nums[right] <= target) {
                     result += right - left;
                     left++;
