@@ -22,9 +22,9 @@ public class Solution {
         while (left < right) {
             if (nums[left] + nums[right] > target) {
                 result += right - left;
-                left++;
-            } else {
                 right--;
+            } else {
+                left++;
             }
         }
         return result;
