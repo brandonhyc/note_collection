@@ -131,17 +131,33 @@
 
 ### Pure JS way
 ````javascript
-    function foo(){}
-    foo.prototype = {
-        foo_prop: "foo val"
+    var Parent = function(name) {
+        this.name = name;
     };
-    var proto = new foo;
-    proto.bar_prop = "bar val";
-    function bar(){}
-    bar.prototype = proto;
-    var inst = new bar;
-    console.log(inst.foo_prop);
-    console.log(inst.bar_prop);
+    Parent.prototype.sayHi = function() {
+        console.log("Hi! I am " + this.name + ".")
+    }
+
+    var Child = function(name) {
+        Parent.call(this, name);
+        this.age = age;
+
+        this.play = function() {
+            console.log(this.name + " is playing");
+        }
+    }
+    Children.prototype = new Parent();
+    Children.prototype.getAge = function() {
+        console.log(this.age);
+    }
+    
+
+    var Steve = new Parent("Steve");
+    var Stephen = new Child("Stephen", 6);
+    Steve.sayHi();
+    Stephen.sayHi();
+    Stephen.getAge();
+
 ````
 
 ### ES5 Object.create()
