@@ -120,21 +120,32 @@ trackByHeroes(index: number, hero: Hero): number { return hero.id; }
 
 ### Template reference variables ( #var )
 
-### @Input
+### @Input/output
 ```ts
 ------------------ hero-detail-component
 import { Hero } from '../hero';
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
+  @Output() deleteRequest = new EventEmitter<Hero>();
 }
 -- html
 <div><span>id: </span>{{hero.id}}</div>
                            ↑↑↑↑
 ------------------ heros-component
 -- html
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<app-hero-detail [hero]="selectedHero"
+                 (deleteRequest)="deleteHero($event)"
+></app-hero-detail>
                     ↑↑↑↑
 ```
+#### alternatives
+```ts
+@Component({
+  inputs: ['hero'],
+  outputs: ['deleteRequest'],
+})
+```
+
 
 # Routes
 
