@@ -26,7 +26,7 @@ public class Solution {
         ListNode node = head;
 
         while (node.next != null) {
-            if (!set.add(node)) {
+            if (set.add(node)) {
                 node = node.next;
                 continue;
             }
