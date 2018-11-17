@@ -28,8 +28,6 @@ function test(testIdName, fn) {
     
 }
 
-
-
 function createUl(){
 
     ul = document.createElement("ul");
