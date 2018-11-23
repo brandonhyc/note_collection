@@ -1,3 +1,5 @@
+参考文章： http://www.cnblogs.com/TomXu/archive/2012/01/17/2310479.html
+
 ### 判断方法
 (non-strict mode)
 1. if referenceType, this = reference.base

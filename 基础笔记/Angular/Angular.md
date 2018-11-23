@@ -174,5 +174,124 @@ const routes: Routes = [
 <router-outlet></router-outlet>
 ```
 
+## Communication between components
+
+### Parent -> Child 
+1. #tag
+```ts
+--- parent
+<child #child></child>
+<button (click)="child.childFn()" class="btn btn-success">调用子组件方法</button>
+--- child
+public childFn():void{
+    console.log("子组件的名字是>"+this.panelTitle);
+}
+```
+2. @Input & @Output
+parent -> child
+```ts
+--- parent
+<child panelTitle="一个新的标题"></child>
+
+--- child
+@Input()
+public panelTitle:string;
+```
+3. ViewChild Decorator
+
+### Child -> Parent
+1. @Input & @Output
+```ts
+--- child
+@Output()
+public follow = new EventEmitter<string>();
+this.follow.emit("follow");
+
+---parent
+<child (follow)="doSomething()"></child>
+```   
+
+### w/o relationships
+1. service
+```ts
+--- service
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+
+/**
+ * 用来充当事件总线的 Service
+ */
+@Injectable()
+export class EventBusService {
+  public eventBus:Subject<string> = new Subject<string>();
+
+  constructor() { }
+
+}
+
+--- component1
+import { Component, OnInit } from '@angular/core';
+import { EventBusService } from '../service/event-bus.service';
+
+@Component({
+  selector: 'child-1',
+  templateUrl: './child-1.component.html',
+  styleUrls: ['./child-1.component.css']
+})
+export class Child1Component implements OnInit {
+
+  constructor(public eventBusService:EventBusService) { }
+
+  ngOnInit() {
+  }
+
+  public triggerEventBus():void{
+    this.eventBusService.eventBus.next("第一个组件触发的事件");
+  }
+}
+
+--- component2
+
+import { Component, OnInit } from '@angular/core';
+import { EventBusService } from '../service/event-bus.service';
+
+@Component({
+  selector: 'child-2',
+  templateUrl: './child-2.component.html',
+  styleUrls: ['./child-2.component.css']
+})
+export class Child2Component implements OnInit {
+  public events:Array<any>=[];
+
+  constructor(public eventBusService:EventBusService) {
+
+  }
+
+  ngOnInit() {
+    this.eventBusService.eventBus.subscribe((value)=>{
+      this.events.push(value+"-"+new Date());
+    });
+  }
+}
+
+``` 
+
+2. localStorage/cookie
+```ts
+--- from
+public writeData():void{
+    window.localStorage.setItem("json",JSON.stringify({name:'大漠穷秋',age:18}));
+}
+
+--- to
+var json=window.localStorage.getItem("json");
+// window.localStorage.removeItem("json");
+var obj=JSON.parse(json);
+console.log(obj.name);
+console.log(obj.age);
+```
+
+
 
 
