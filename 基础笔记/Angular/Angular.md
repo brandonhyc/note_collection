@@ -293,5 +293,14 @@ console.log(obj.age);
 ```
 
 
+# 面试题
+
+### angularjs vs angular
+1. js, ts
+2. the architecture of angularjs is mvc, but angular's is mvvm. So the controller and $scope are replaced by components and directives
+
+### $scope vs $rootScope
+1. "$rootScope” is a parent object of all “$scope” angular objects created in a web page.
+2. A property assigned with $scope cannot be used outside the controller in which it is defined whereas a property assigned with $rootScope can be used anywhere.
 
 

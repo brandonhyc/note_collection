@@ -40,9 +40,9 @@ public class Solution {
                 right--;
             }
 
-            quickSort(nums, start, right);
-            quickSort(nums, left, end);
         }
+        quickSort(nums, start, right);
+        quickSort(nums, left, end);
 
     }
 }
