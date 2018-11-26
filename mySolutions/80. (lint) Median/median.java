@@ -8,34 +8,42 @@ public class Solution {
         if (nums == null || nums.length == 0) {
             return -1;
         }
-
+        return petition(nums, 0, nums.length - 1, (nums.length - 1) / 2);
     }
-    private int sub(int nums, int start, int end, int size) {
 
-        if (left == right) {
+    private int petition(int[] nums, int start, int end, int k) {
+
+        if (start == end) {
             return nums[k];
         }
 
-        int start = left;
-        int end = right;
-        int pivot = nums[(end - start) / 2 + start];
+        int left = start, right = end;
+        int pivot = nums[left + (right - left) / 2];
 
-        while (start <= end) {
-            while (nums[start] < pivot && start <= end) {
-                start++;
+        while (left <= right) {
+            
+            while (left <= right && nums[left] < pivot) {
+                left++;
             }
-            while (nums[end] > pivot && start <= end) {
-                end--;
+            while (left <= right && nums[right] > pivot) {
+                right--;
             }
-            if (start <= end) {
-                int temp = nums[start];
-                nums[start] = nums[end];
-                nums[end] = temp;
-                start++;
-                end--;
+
+            if (left <= right) {
+                int temp = nums[left];
+                    nums[left] = nums[right];
+                    nums[right] = temp;
+
+                left++; right--;
             }
         }
 
-        
+        if (k <= right) {
+            return petition(nums, start, right, k);
+        }
+        if (left <= k) {
+            return petition(nums, left, end, k);
+        }
+        return nums[k];
     }
 }
