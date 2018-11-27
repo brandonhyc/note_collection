@@ -14,7 +14,7 @@ public class Solution {
             return -1;
         }
 
-        return petition(nums, n, 0, nums.length - 1);
+        return petition(nums, n - 1, 0, nums.length - 1);
 
     }
 
