@@ -220,6 +220,9 @@ function requestReadyCallback() {
 
 # Promise
 
+## What is promise
+The promise is the object that represent the completion of an asynchronous operation and its resulting value. 
+
 ````javascript
 doSomething().then(function(result) {
   return doSomethingElse(result);
