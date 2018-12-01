@@ -177,30 +177,30 @@ const routes: Routes = [
 ## Communication between components
 
 ### Parent -> Child 
-1. #tag
+#### 1. #tag
 ```ts
 --- parent
 <child #child></child>
 <button (click)="child.childFn()" class="btn btn-success">调用子组件方法</button>
 --- child
 public childFn():void{
-    console.log("子组件的名字是>"+this.panelTitle);
+    console.log("子组件的名字是>" + this.panelTitle);
 }
 ```
-2. @Input & @Output
+#### 2. @Input & @Output
 parent -> child
 ```ts
 --- parent
-<child panelTitle="一个新的标题"></child>
+<child [panelTitle]="一个新的标题"></child>
 
 --- child
 @Input()
 public panelTitle:string;
 ```
-3. ViewChild Decorator
+#### 3. ViewChild Decorator
 
 ### Child -> Parent
-1. @Input & @Output
+#### 1. @Input & @Output
 ```ts
 --- child
 @Output()
@@ -212,7 +212,7 @@ this.follow.emit("follow");
 ```   
 
 ### w/o relationships
-1. service
+#### 1. service
 ```ts
 --- service
 import { Injectable } from '@angular/core';
@@ -277,7 +277,7 @@ export class Child2Component implements OnInit {
 
 ``` 
 
-2. localStorage/cookie
+#### 2. localStorage/cookie
 ```ts
 --- from
 public writeData():void{
@@ -327,7 +327,7 @@ console.log(obj.age);
   A template is a HTML view where you can display data by binding controls to properties of an Angular component.
 ### What is a module?
 
-  Modules are logical boundaries in your application and the application is divided into separate modules to separate the functionality of your application.
+  You can think of modules like packages or bundles containing the required code for a specific use case, it includes components and services. Modules are logical boundaries in your application and the application is divided into separate modules to separate the functionality of your application.
   
   ```typescript
   import { NgModule }      from '@angular/core';
@@ -374,14 +374,79 @@ Metadata is used to decorate a class so that it can configure the expected behav
 In TypeScript, constructor is called when initializing a class. ngOnInit is in Angular, it means the key lifecycle moment of initialization of component. 
 
 ### What is a service?
-A service is used for providing a common functionality for between modules. 
-
-### What is dependency injection in Angular?
-Dependency injection (DI), is an important application design pattern in which a class asks for dependencies from external sources rather than creating them itself. Angular comes with its own dependency injection framework for resolving dependencies( services or objects that a class needs to perform its function).So you can have your services depend on other services throughout your application.
+Angular services are singleton objects which get instantiated only once during the lifetime of an application. They contain methods that maintain data and is used for providing a common functionality for between modules. 
 
 ### What is dependency injection in Angular?
 Dependency injection (DI), is an application design pattern. It means a class will use dependencies from external sources rather than creating them by itself. Angular comes with its own dependency injection framework for resolving dependencies. So you can have your services depend on other services throughout your application.
 
 ### ngIf 
 In the view, some components are conditional. Use ngIf to control inserting or removing elements based on a condition.
+
+### What are pipes? Give me an example.
+A pipe takes in data as input and transforms it to a desired output. 
+```ts
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({name: 'capitalize'})
+export class CapitalizePipe implements PipeTransform {
+  transform(value: string, args: string[]): any {
+    if (!value) return value;
+
+    return value.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+}
+```
+
+### What are some differences between Angular 2 and 4?
+Just to name a few:
+Improvements in AOT, allowing the "else" clause in ngIf, support for TypeScript 2.1, breaking out the animations package
+
+## Optimization
+
+### Using TrackBy
+As a result, Angular needs to remove all the DOM elements associated with the data and create them again. This can mean a lot of DOM manipulations, especially in the case of a big collection. And, as we know, DOM manipulations are expensive.
+
+### Avoid Computing Values (complex task) in the Template
+
+### Disable Change Detection
+```ts
+@Component({
+  selector: 'giant-list',
+  template: `
+    <li *ngFor="let d of dataProvider.data">Data {{d}}</li>
+  `,
+})
+class GiantList {
+  constructor(private ref: ChangeDetectorRef, private dataProvider: DataProvider) {
+    ref.detach();
+    setInterval(() => {
+      this.ref.detectChanges();
+    }, 5000);
+  }
+}
+```
+
+
+### What is lazy loading
+
+Lazy loading is technique that defers loading of non-critical resources at page load time. Instead, these non-critical resources are loaded at the moment of need. 
+```ts
+--- app-routing.module.ts
+const routes: Routes = [
+  {
+    path: "posts",
+    loadChildren: "../app/posts/posts.module#PostsModule"
+  }
+  ...]
+
+  @NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  providers: []
+})
+https://codeburst.io/how-to-implement-lazy-loading-in-angular-6-419491102591
+```
+
 
