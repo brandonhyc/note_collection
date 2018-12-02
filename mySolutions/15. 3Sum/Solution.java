@@ -12,6 +12,7 @@ public class Solution {
         List<List<Integer>> resList = new ArrayList<>();
 
         for (int i = 0; i < numbers.length - 2; i++) {
+            
             int sum = -numbers[i], start = i + 1, end = numbers.length - 1;
             while (start < end) {
                 if (numbers[start] + numbers[end] == sum) {
