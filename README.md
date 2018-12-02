@@ -26,6 +26,15 @@ ICC那边最后一面的时候, 我说需要考虑一下简历修改的问题. �
 
 -10.15.2018记
 
+刚买了 frontend master 的课，有点小兴奋。以下是 software engineer 的四大素养。第五点其实是最其次的，越是菜鸡越看重这个，共勉。
+1. Analytical problem solving with code
+2. Technical communication (can I implement your approach just from your explanation)
+3. Engineering best practices and approach (Debugging, code structure, patience and reference to documentation)
+4. Non-technical communication (empathetic and thoughtful communication)
+5. Language and computer science experience
+
+-12.1.2018记
+
 
 # 时间复杂度 空间复杂度
 ## Set

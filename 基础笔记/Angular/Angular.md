@@ -371,7 +371,7 @@ Two-way binding: Two-way data binding: [(ngModel)]=”value”
 Metadata is used to decorate a class so that it can configure the expected behavior of the class. The metadata is represented by decorators
 
 ### Constructor vs. ngOnInit
-In TypeScript, constructor is called when initializing a class. ngOnInit is in Angular, it means the key lifecycle moment of initialization of component. 
+In TypeScript, constructor will be called immediately when initializing a class. ngOnInit is in Angular, it means the key lifecycle moment of initialization of component. So, you will run into a problem if you assume the data is available via binding from parent component, and you put into constructor, it goes wrong when the data not yet exists.
 
 ### What is a service?
 Angular services are singleton objects which get instantiated only once during the lifetime of an application. They contain methods that maintain data and is used for providing a common functionality for between modules. 
