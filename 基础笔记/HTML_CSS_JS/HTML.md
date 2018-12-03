@@ -86,19 +86,7 @@ s2上注册了冒泡和捕获事件，先注册的冒泡后注册的捕获，则
 http://jsfiddle.net/brandonhyc/0b8eLmp1/
 
 
-8. GET/POST
-The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
 
-Notes on GET:
-* Appends form-data into the URL in name/value pairs
-* The length of a URL is limited (about 3000 characters)
-* Never use GET to send sensitive data! (will be visible in the URL)
-* Useful for form submissions where a user want to bookmark the result
-* GET is better for non-secure data, like query strings in Google
-Notes on POST:
-* Appends form-data inside the body of the HTTP request (data is not shown is in URL)
-* Has no size limitations
-* Form submissions with POST cannot be bookmarked
 
 
 ````html

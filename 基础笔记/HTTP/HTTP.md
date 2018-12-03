@@ -36,6 +36,26 @@ Status line + subsequent Header lines + [] + Entity Body<br>
 Status line contains: version, status code and status text
 
 
+### GET vs POST
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+Notes on GET:
+* Appends form-data into the URL in name/value pairs
+* The length of a URL is limited (about 3000 characters)
+* Never use GET to send sensitive data! (will be visible in the URL)
+* Useful for form submissions where a user want to bookmark the result
+* GET is better for non-secure data, like query strings in Google
+* 
+Notes on POST:
+* Appends form-data inside the body of the HTTP request (data is not shown is in URL)
+* Has no size limitations
+* Form submissions with POST cannot be bookmarked
+
+### POST vs PUT
+POST is for the purpose of creating, put is for the purpose of updating.
+POST updates a resource, adds a subsidiary resource, or causes a change. A POST is not idempotent, in the way that x++ is not idempotent.
+PUT is idempotent, so if you PUT an object twice, it has same effect. 
+
 
 ### HTTP请求发起和响应过程
 
