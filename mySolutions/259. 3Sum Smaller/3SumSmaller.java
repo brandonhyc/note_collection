@@ -25,16 +25,9 @@ public class Solution {
                 if (sum < target) {
                     result += right - left;
                     left++;
-                    while (left < right && nums[left - 1] == nums[left]) {
-                        left++;
-                    }
-                    right = nums.length - 1;
 
                 } else if (sum >= target) {
                     right--;
-                    while (left < right && nums[right + 1] == nums[right]) {
-                        right--;
-                    }
                 }
             }
         }
