@@ -17,7 +17,6 @@ public class Solution {
         for (int start = 0; start < nums.length - 2; start++) {
             
             int left = start + 1, right = nums.length - 1;
-            
             while (left < right) {
 
                 int sum = nums[start] + nums[left] + nums[right];
