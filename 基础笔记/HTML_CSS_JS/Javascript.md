@@ -141,7 +141,7 @@ https://segmentfault.com/a/1190000003810652
 ````
 
 # AJAX
-### 什么是AJAX? 
+### 什么是AJAX?
 Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。
 
 假如我们使用Form, 用户submit后会出现白页, 等待返回并刷新网页, 可能会很慢, 有不好的用户体验. 如果采用ajax,用户可以停留在当前页, 在返回数据后再用js刷新数据, 体验会好很多.
