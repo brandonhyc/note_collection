@@ -49,7 +49,7 @@ public class Solution {
             UndirectedGraphNode head = queue.poll();
             set.add(head);
             
-            for (UndirectedGraphNode neighbor : head.neighbor) {
+            for (UndirectedGraphNode neighbor : head.neighbors) {
                 if (!set.contains(neighbor)) {
                     set.add(neighbor);
                     queue.offer(neighbor);
