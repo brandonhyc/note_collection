@@ -382,6 +382,24 @@ Dependency injection (DI), is an application design pattern. It means a class wi
 ### ngIf 
 In the view, some components are conditional. Use ngIf to control inserting or removing elements based on a condition.
 
+### ngForm
+ngForm is the top level of formControl, and it has access to formControl within it. In formControl, it's the way in angular binding DOM form model. 
+```html
+  <form #myForm="ngForm" (submit)="saved.emit(selectedWidget)">
+    <md-card-content>
+      <md-input-container>
+        <input required [(ngModel)]="selectedWidget.name" type="text" name="name">
+      </md-input-container>
+      <md-input-container>
+        <input placeholder="Description" [(ngModel)]="selectedWidget.description" type="text" name="description">
+      </md-input-container>
+      <hr>
+      <pre> {{myForm.value |json }} </pre>
+    </md-card-content>
+  </form>
+```
+
+
 ### What are pipes? Give me an example.
 A pipe takes in data as input and transforms it to a desired output. 
 ```ts
