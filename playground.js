@@ -1,19 +1,20 @@
-function MyObject() {
+function sum(a) {
     
-    var self = this;
-    this.doSomething = function () {
-        console.log("doing something")
-        console.log(this);
-        console.log(self);
-    }
-    
-    this.operateSelf = function () {
-        self.doSomething();
-    }
-    this.operateThis = function () {
-        this.doSomething();
-    }
-}
+    let currentSum = a;
 
-var obj = new MyObject();
-obj.doSomething();
+    const func = function f(b) {
+        currentSum += b;
+        return f;
+    }
+
+    func.toString = function() {
+        return currentSum;
+    } 
+
+    return func;
+}
+console.log(sum(1)(2) == 3);
+sum(1)(2)(3) == 6; // 1 + 2 + 3
+sum(5)(-1)(2) == 6
+sum(6)(-1)(-2)(-3) == 0
+sum(0)(1)(2)(3)(4)(5) == 15
