@@ -5,18 +5,18 @@ var box5 = {
     clickMe: function() {
             var selfInsideClickMe = this;
             document.querySelector('.green').addEventListener('click', 
-            function() { // ES5
-                var selfInsideEventListener = this;
-                var str = selfInsideClickMe.position;
-                alert(str); // str undefined? why??
-                console.log('self: ', self); //Window
-                console.log('selfInsideClickMe: ', selfInsideClickMe); // Object
-                console.log('selfInsideEventListener: ', selfInsideEventListener); //Div
+                function() { // ES5
+                    var selfInsideEventListener = this;
+                    var str = selfInsideClickMe.position;
+                    alert(str); // str undefined? why??
+                    console.log('self: ', self); //Window
+                    console.log('selfInsideClickMe: ', selfInsideClickMe); // Object
+                    console.log('selfInsideEventListener: ', selfInsideEventListener); //Div
 
-                printElements(`'self: ', ${self.toString()}`);
-                printElements(`'selfInsideClickMe: ', ${selfInsideClickMe.toString()}`);
-                printElements(`'selfInsideEventListener: ', ${selfInsideEventListener.toString()}`);
-        });
+                    printElements(`'self: ', ${self.toString()}`);
+                    printElements(`'selfInsideClickMe: ', ${selfInsideClickMe.toString()}`);
+                    printElements(`'selfInsideEventListener: ', ${selfInsideEventListener.toString()}`);
+            });
     }
 }
 var box6 = {

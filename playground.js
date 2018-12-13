@@ -1,20 +1,45 @@
-function sum(a) {
+// const case1 = "00-44   48 5555 8361";
+// const ans1 = "004-448-555-583-61";
+
+// console.log(formatPhoneNumber(case1));
+
+function formatPhoneNumber(str) {
+    str = strip(str);
     
-    let currentSum = a;
+    let result = "";
+    let start = 0;
 
-    const func = function f(b) {
-        currentSum += b;
-        return f;
+
+    while(start < str.length) {
+        if (start + 2 >= str.length) {
+            result += str.slice(start, str.length);
+            return result;
+        }
+
+        result += str.slice(start, start + 2);
+        result += "-";
+        
+        start += 2;
     }
+    
 
-    func.toString = function() {
-        return currentSum;
-    } 
-
-    return func;
+    function strip(str) {
+        return str.replace(/[^\d]/g, '');
+    }
 }
-console.log(sum(1)(2) == 3);
-sum(1)(2)(3) == 6; // 1 + 2 + 3
-sum(5)(-1)(2) == 6
-sum(6)(-1)(-2)(-3) == 0
-sum(0)(1)(2)(3)(4)(5) == 15
+
+
+
+
+function outer() {
+    var number = 0;    
+    
+    return function () {
+        return number++;
+    }
+}
+
+getNumber = outer();
+for (let i = 0; i < 2; i++) {
+    console.log(getNumber());
+}
