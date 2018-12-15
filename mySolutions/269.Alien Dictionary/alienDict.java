@@ -21,7 +21,7 @@ public class Solution {
             }
         }
 
-        for (int i = 0; i < words.length - 1; i++) {
+        for (int i = 0; i < words.length - 1; i++) {    
             int index = 0;
             while (index < words[i].length() && 
                     index < words[i + 1].length()) {

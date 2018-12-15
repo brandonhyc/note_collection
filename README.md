@@ -208,6 +208,11 @@ public class Solution {
 
 ## Breath First Search (BFS)
 
+### 用处
+Traversal in Graph - Level Order, Connected Component, Topological Sorting
+Shortest path in Simple Graph
+
+
 https://www.jiuzhang.com/solution/number-of-islands/
 
 ````java
