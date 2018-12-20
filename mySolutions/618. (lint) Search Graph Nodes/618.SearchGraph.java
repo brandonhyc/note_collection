@@ -55,7 +55,7 @@ public class Solution {
                     return node;
                 }
 
-                for (UndirectedGraphNode neighbor : neighbors) {
+                for (UndirectedGraphNode neighbor : node.neighbors) {
                     if (!visited.contains(neighbor)) {
                         queue.offer(neighbor);
                     }
