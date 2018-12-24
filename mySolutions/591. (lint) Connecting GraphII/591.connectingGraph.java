@@ -1,47 +1,43 @@
-public class ConnectingGraph { 
+public class ConnectingGraph3 {
+    /**
+     * @param a: An integer
+     * @param b: An integer
+     * @return: nothing
+     */
 
     private int[] father = null;
-    private int[] size = null;
+    private int count;
 
     private int find(int x) {
-        int root, k;
-        root = x;
-        while (father[root] != root) {
-            root = father[root];
+        if (father[x] == x) {
+            return x;
         }
-
-        int temp;
-        while (x != root) {
-            temp = father[x];
-            father[x] = root;
-            x = temp;
-        }
+        return father[x] = find(father[x]);
     }
 
-    public ConnectingGraph2(int n) {
-        // initialize your data structure here.
-        parent = new int[n];
-        for (int i = 0; i < n; i++) {
-            parent[i] = i;
-            size[i] = 1;
+    public ConnectingGraph3(int n) {
+        father = new int[n + 1];
+        count = n;
+        for (int i = 1; i <= n; i++) {
+            father[i] = i;
         }
     }
 
     public void connect(int a, int b) {
-        // Write your code here
+        // write your code here
         int rootA = find(a);
         int rootB = find(b);
-
         if (rootA != rootB) {
-            parent[rootA] = rootB;
-            size[rootB] += size[rootA];
-            find(a);
+            father[rootA] = rootB;
+            count--;
         }
     }
-        
-    public int query(int a) {
-        // Write your code here
-        int rootA = find(a);
-        return size[rootA];
+
+    /**
+     * @return: An integer
+     */
+    public int query() {
+        // write your code here
+        return count;
     }
 }
