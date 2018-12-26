@@ -23,16 +23,12 @@ public class Solution {
                 }
             }
         }
-
         Set<Integer> set = new HashSet<Integer>();
-        
         for (int i = 0; i < sets.length; i++) {
             for (int j = 0; j < sets[i].length; j++) {
                 int father = find(sets[i][j]);
                 if (!set.contains(father)) {
-                    set.add(father);
-                }
-            }
+                    set.add(father);}}
         }
         return set.size();
     }
@@ -41,11 +37,9 @@ public class Solution {
         if (map.get(x) == x) {
             return x;
         }
-
         map.put(x, find(map.get(x)));
         return map.get(x);
     }
-
     private void union(int a, int b) {
         int rootA = find(a);
         int rootB = find(b);
