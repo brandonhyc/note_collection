@@ -8,8 +8,8 @@ public class Solution {
         father = new HashMap();
 
         Map<String, List> mapEmailToIds = getEmailToIds(accounts);
-        for (String email : emailToIds.keySet()) {
-            List<Integer> ids = emailToIds.get(email);
+        for (String email : mapEmailToIds.keySet()) {
+            List<Integer> ids = mapEmailToIds.get(email);
             for (int i = 1; i < ids.size(); i++) {
                 union(ids.get(i), ids.get(0));
             }
@@ -19,7 +19,7 @@ public class Solution {
         List<List<String>> mergeAccounts = new ArrayList<>();
         for (Integer id : idToEmail.keySet()) {
             List<String> sortedEmails = new ArrayList(idToEmail.get(id));
-            Collects.sort(sortedEmails);
+            Collections.sort(sortedEmails);
             sortedEmails.add(0, accounts.get(id).get(0));
             mergeAccounts.add(sortedEmails);
         }
@@ -31,8 +31,8 @@ public class Solution {
 
         for (int indexOfAccount = 0; indexOfAccount < accounts.size(); indexOfAccount++) {
             List<String> account = accounts.get(indexOfAccount);
-            for (int indexOfEmail = 1; indexOfEmail < accout.size(); indexOfEmail++) {
-                List<Integer> email = account.get(indexOfEmail);
+            for (int indexOfEmail = 1; indexOfEmail < account.size(); indexOfEmail++) {
+                String email = account.get(indexOfEmail);
 
                 if (!mapEmailToIds.containsKey(email)) {
                     mapEmailToIds.put(email, new ArrayList<Integer>());
@@ -45,13 +45,13 @@ public class Solution {
     }
 
     private Map<Integer, Set<String>> getIdToEmail(List<List<String>> accounts) {
-        Map<Integer, Set<String>> mapIdToEmail = new HashSet<>();
+        Map<Integer, Set<String>> mapIdToEmail = new HashMap<>();
 
         for (int indexOfAccount = 0; indexOfAccount < accounts.size(); indexOfAccount++) {
             int rootId = find(indexOfAccount);
             List<String> account = accounts.get(indexOfAccount);
 
-            if (!mapIdToEmail.contains(rootId)) {
+            if (!mapIdToEmail.containsKey(rootId)) {
                 mapIdToEmail.put(rootId, new HashSet<String>());
             }
 
@@ -67,9 +67,10 @@ public class Solution {
 
     private int find(int id) {
         if (!father.containsKey(id) || father.get(id) == id) {
+            father.put(id, id);
             return id;
         }
-        int rootId = find(id);
+        int rootId = find(father.get(id));
         father.put(id, rootId);
         return rootId;
     }
