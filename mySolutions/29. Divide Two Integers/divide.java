@@ -23,7 +23,7 @@ public class Solution {
 
         while (positiveDividend >= positiveDivisor) {
             int shiftTime = 0;
-            
+            // m << n means m ^ 2*n 
             while (positiveDividend >= (positiveDivisor << shiftTime)) {
                 shiftTime++;
             }
