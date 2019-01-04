@@ -24,9 +24,8 @@ public class Solution {
         inorder(root);
         
         if (nodeA != null) {
-            int temp = nodeA.val;
-                nodeA.val = nodeB.val;
-                nodeB.val = temp;
+            swap(nodeA, nodeB);
+            // only need to swap the nodeA.val and nodeB.val
         }
         return root;
     }
