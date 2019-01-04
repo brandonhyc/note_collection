@@ -20,27 +20,17 @@ public class Solution {
 
     public boolean isValidBST(TreeNode root) {
         // write your code here
-        lastNode = null;
-        isValid = true;
-        inorderTraverse(root);
 
-        return isValid;
+        return divConq(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    private void inorderTraverse(TreeNode root) {
+    private boolean divConq(TreeNode root, int min, int max) {
         if (root == null) {
-            return;
+            return true;
         }
-        if (root != null) {
-            inorderTraverse(root.left);
-
-            if (lastNode != null && 
-                lastNode.val >= root.val) {
-                isValid = false;
-                return;
-            }
-            lastNode = root;
-            inorderTraverse(root.right);
+        //if (root != null)
+        if (root.val <= min || root.val >= max) {
+            return false;
         }
     }
 }
