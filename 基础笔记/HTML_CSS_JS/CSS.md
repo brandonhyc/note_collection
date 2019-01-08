@@ -190,7 +190,7 @@ To style specified parts of an element.
 
  
 
-4. 居中方法
+4. 居中方法 center
 https://juejin.im/post/5b9a4477f265da0ad82bf921?utm_source=gold_browser_extension
 
     ````css
