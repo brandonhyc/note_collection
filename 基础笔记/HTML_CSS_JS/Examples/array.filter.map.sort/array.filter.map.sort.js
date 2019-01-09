@@ -1,14 +1,14 @@
 function personalizeCoupons(coupons, preferredCategories) {
     /*
-    * coupons: array of map
-    * coupon: map {
-    *   upc - string,
-    *   code - string,
-    *   category - string,
-    *   itemPrice - float,
-    *   couponAmount - float
-    * }
-    */
+     * coupons: array of map
+     * coupon: map {
+     *   upc - string,
+     *   code - string,
+     *   category - string,
+     *   itemPrice - float,
+     *   couponAmount - float
+     * }
+     */
 
     // filter out 
     let selectedCoupons = coupons.filter(coupon => {
@@ -45,7 +45,6 @@ function personalizeCoupons(coupons, preferredCategories) {
 
     return selectedCoupons;
 }
-
 // {"couponAmount":5.02,"upc":"0677335752583272","code":"31463880544002973964","itemPrice":10.97,"category":"Sporting Goods"}, 
 // {"couponAmount":4.91,"upc":"3663405873668696","code":"88620249668379048840","itemPrice":11.75,"category":"International"},
 // {"couponAmount":7.24,"upc":"1276448878160824","code":"67590620582640523769","itemPrice":19.35,"category":"Baking Goods"},

@@ -146,7 +146,6 @@ export class HeroDetailComponent implements OnInit {
 })
 ```
 
-
 # Routes
 
 ```ts
