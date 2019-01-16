@@ -20,6 +20,13 @@ set css border-collapse: collapse || separate
 * attribute selector [] 
 * pseudo selector :
 
+### What is Selector in CSS
+The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons.
+
+### Id vs class
+The difference between an ID and a class is that an ID can be used to identify one element, whereas a class can be used to identify more than one.
+
+
 ### 必考 What is the difference between descendent selector and child selector
  _ selector selects all the decedent elements, it does not need to be the immediate child element. > Child selector only select the immediate child element
 
@@ -103,6 +110,7 @@ CSS Grid Layout is used for responsive web app. The web app display different la
   </div>
 </div>
 ```
+
 !!NEW FEATURE: NOT SUPPORTED IN OLD IE
 3. rem: `1rem`= by default `16px` = `font-size` of root
 * rems don't support old IE

@@ -140,6 +140,11 @@ https://segmentfault.com/a/1190000003810652
 
 ````
 
+### Regular expression
+a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of text.
+
+
+
 # AJAX
 ### 什么是AJAX?
 Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。

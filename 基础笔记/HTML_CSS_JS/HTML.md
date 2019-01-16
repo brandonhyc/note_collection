@@ -14,6 +14,10 @@ The Instruction for using HTML5
 remove: ``` font, basefont, big, strike, center, tt, frame, noframes, frameset ```<br>
 new: ```nav, article, section, footer, header, audio, video, canvas, figure, datalist ```
 
+### What is Canvas
+The HTML ```<canvas>``` element is used to draw graphics on a web page.
+
+
 ### Uses of HTML
 Publish online documents with headings, texts, tables, lists, photos, etc.
 Retrieve online information via hypertext links.
