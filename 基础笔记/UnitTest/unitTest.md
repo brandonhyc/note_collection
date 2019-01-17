@@ -10,7 +10,7 @@ run ```ng test```
 
 ### Example
 ```ts
-import { ContactComponent } from './contact.component';
+import { ContactComponent } **from** './contact.component';
 
 describe('ContactComponent', () => {
   let comp: ContactComponent;

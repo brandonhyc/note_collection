@@ -1,5 +1,8 @@
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
+### What is Interface
+An interface is a reference type in Java. It is similar to class. It is a collection of abstract methods. A class implements an interface, thereby inheriting the abstract methods of the interface.
+
 ### HashCode and equal()
 1. 如果两个对象相等，则 hashcode 一定也是相同的
 2. 两个对象相等,对两个对象分别调用 equals 方法都返回true

@@ -5,21 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "Debug (Launch)",
+            "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "",
-            "args": ""
-        },
-        {
-            "type": "java",
-            "name": "Debug (Attach)",
-            "request": "attach",
-            "hostName": "localhost",
-            "port": "<debug port of remote debuggee>"
+            "name": "nodemon-playground",
+            "runtimeExecutable": "nodemon",
+            "program": "${workspaceFolder}/playground.js",
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
         }
+        // {
+        //     "type": "java",
+        //     "name": "Debug (Launch)",
+        //     "request": "launch",
+        //     "cwd": "${workspaceFolder}",
+        //     "console": "internalConsole",
+        //     "stopOnEntry": false,
+        //     "mainClass": "",
+        //     "args": ""
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Debug (Attach)",
+        //     "request": "attach",
+        //     "hostName": "localhost",
+        //     "port": "<debug port of remote debuggee>"
+        // }
     ]
 }

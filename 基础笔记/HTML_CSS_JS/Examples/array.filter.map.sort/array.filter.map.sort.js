@@ -10,12 +10,11 @@ function personalizeCoupons(coupons, preferredCategories) {
      * }
      */
 
-// array: filter, sort, map, reduce, slice,
-
-    
+    // array: filter, sort, map, reduce, slice,
 
     // filter out 
     let selectedCoupons = coupons.filter(coupon => {
+        
         let category = coupon.category;
         return preferredCategories.includes(category);
     })
