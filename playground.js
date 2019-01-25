@@ -1,35 +1,15 @@
-function recursivelyFlattenArray(array) {
-    return flatten(array);
-
-    function flatten(array) {
-        if (!Array.isArray(array)) {
-            return [array];
+let obj = {
+    name: "parentObj",
+    Child: {
+        name: "childObj",
+        callName: function () {
+            console.log(this.name);
         }
-        let result = [];
-
-        array.forEach(element => {
-            result = result.concat(flatten(element));
-        });
-        return result;
     }
 }
+obj.Child.callName() // ?? ans: childObj
 
-function iterativelyFlattenArray(array) {
-    let result = [];
-    while (array.length != 0) {
-        let el = array.shift();
-        if (Array.isArray(el)) {
-            array = el.concat(array);
-            continue;
-        }
-        result.push(el);
-    }
-    
-    return result;
-}
+let func = obj.Child.callName;
+// what will be a way to use callName() to have console result as “parentObj”
 
-
-
-var arr = [1, [2, [3]], [4]];
-
-console.log(iterativelyFlattenArray(arr));
+func.call(obj, null);

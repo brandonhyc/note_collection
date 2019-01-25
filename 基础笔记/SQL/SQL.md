@@ -1,5 +1,11 @@
 # DBS
 
+## NoSQL vs. SQL
+1. The Scalability –
+In almost all situations SQL databases are vertically scalable. But on the other hand NoSQL databases are horizontally scalable. This means that you handle more traffic by sharding, or adding more servers in your NoSQL database. Less network communication overload.
+2. NoSQL has dynamic schema
+3. NoSQL is not a good fit for complex query
+
 ## XML vs. JSON
 
 |                       | XML                  | JSON         |

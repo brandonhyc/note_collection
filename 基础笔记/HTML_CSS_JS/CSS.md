@@ -212,8 +212,15 @@ https://juejin.im/post/5b9a4477f265da0ad82bf921?utm_source=gold_browser_extensio
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    
+    //2.flex
+    .wp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-    //2.inline-block
+    //3.inline-block
     .wp {
         line-height: 300px;
         text-align: center;
@@ -227,12 +234,6 @@ https://juejin.im/post/5b9a4477f265da0ad82bf921?utm_source=gold_browser_extensio
         text-align: left; /* 修正文字 */
     }
 
-    //3.flex
-    .wp {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     //4. absolute + margin
     .box {
         position: absolute;;

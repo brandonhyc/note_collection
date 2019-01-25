@@ -8,6 +8,7 @@ function extend(childArray, parentArray) {
 // ES5
 function extend(target, source) {
     Object.getOwnPropertyNames(source)
+    
         .forEach(function (propName) {
             Object.defineProperty(target, propName,
                 Object.getOwnPropertyDescriptor(source, propName));
