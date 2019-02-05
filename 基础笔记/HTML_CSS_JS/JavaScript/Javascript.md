@@ -1,4 +1,4 @@
-### 33 must-known concepts
+    ### 33 must-known concepts
 https://github.com/leonardomso/33-js-concepts
 
 
@@ -36,7 +36,7 @@ Either head or body. But if it is linked to DOM, we have to put it within or aft
 var can be read outside the block scope, let can be only read within a block scope. In strict mode, let can't redeclare, but var can.
 
 ### 必考 JS Declarations, Initialization and Hoisting
-1. Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope. Function can be called before the declaration.
+1. Hoisting is all declarations to the top of the current scope during it compiles at runtime, but not initialization. Function can be called before the declaration.
 2. JavaScript only hoists declarations, not initialization (literal expression)
 
 ```javascript
@@ -63,6 +63,16 @@ An inner function always has assess to all parameters(scope) of the outer functi
 
 ### What is Cookie, and fields
 In stateless HTTP protocol, web pages using Cookie to maintain session information among pages to track user behaviors. 5 fields, expire, domain, path, secure, key/value pairs
+
+### Event Bubbling vs Event Capturing, Event propagation
+Event Bubbling: When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
+
+The standard DOM Events describes 3 phases of event propagation:
+Capturing phase – the event goes down to the element.
+Target phase – the event reached the target element.
+Bubbling phase – the event bubbles up from the element.
+
+![Event Bubbling Capturing](./event-order-bubbling.png)
 
 ### JSON
 JSON is a format for storing and exchanging data, easy to read and write for human and generate and parse by machine.

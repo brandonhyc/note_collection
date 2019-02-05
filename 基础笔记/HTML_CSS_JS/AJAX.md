@@ -14,3 +14,22 @@ It is a way to chain asynchronous tasks one by one. After a promise resolved, we
 
 ## What is async/await
 It is nicer syntax to use promise and .then. By creating async function, it will always return a promise. In the function, we use await (.then) to use asynchronous programming. 
+
+
+### Fetch Post
+```js
+fetch(url, {
+    method: 'post',
+    headers: {
+      "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+    },
+    body: 'foo=bar&lorem=ipsum'
+  })
+  .then(json)
+  .then(function (data) {
+    console.log('Request succeeded with JSON response', data);
+  })
+  .catch(function (error) {
+    console.log('Request failed', error);
+  });
+```

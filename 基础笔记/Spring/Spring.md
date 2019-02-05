@@ -1,4 +1,11 @@
-3. REST Controller
+### What is Spring bean
+It's a Java Object created by Spring container.
+
+### What are primary functions in Spring?
+1. create and manage objects by Inversion of Control
+2. Dependency Injection
+
+1. REST Controller
 Following is one possible Rest based controller, implementing REST API. I said possible, means Other’s may implement it in another way, still (or even more pure way) conforming to REST style.
 
 This is what our REST API does:
