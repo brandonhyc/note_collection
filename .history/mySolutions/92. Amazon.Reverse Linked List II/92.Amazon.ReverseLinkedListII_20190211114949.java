@@ -6,7 +6,7 @@ class Solution {
             return null;
         }
 
-        ListNode dummy = new ListNode(0);
+        ListNode dummy = ListNode(0);
         dummy.next = head;
         head = dummy;
         ListNode start = head;
@@ -22,26 +22,11 @@ class Solution {
             return head;
         }
 
-        ListNode prev = start.next;
-        if (prev.next == null) {
-            return dummy.next;
-        }
-        ListNode cur = prev.next;
-
-
-        for (int i = m; i < n; i++) {
-            if (cur == null) {
-                return null;
-            }
-            ListNode temp = cur.next;
-            cur.next = prev;
-
-            prev = cur;
-            cur = temp;
+        for (int i = m; ) {
+            
         }
 
-        start.next.next = cur; 
-        start.next = prev;
+
 
         return dummy.next;
 

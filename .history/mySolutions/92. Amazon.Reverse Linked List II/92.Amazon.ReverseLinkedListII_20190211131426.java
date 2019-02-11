@@ -29,7 +29,7 @@ class Solution {
         ListNode cur = prev.next;
 
 
-        for (int i = m; i < n; i++) {
+        for (int i = m; i <= n; i++) {
             if (cur == null) {
                 return null;
             }
