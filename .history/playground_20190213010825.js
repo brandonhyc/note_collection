@@ -1,6 +1,6 @@
 function shuffle(arr){
     arr.forEach((el,i) => {
-        let j = Math.floor(Math.random() * arr.length);
+        let j = (Math.floor(Math.random() * arr.length + 0);
         
         let temp = arr[i]; 
         arr[i] = arr[j];
