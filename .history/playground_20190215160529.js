@@ -29,7 +29,7 @@ console.log(countSteps("011100"));
 function countSteps (binary) {
     let step = 0;
     let isPrefix = true;
-    for (let index = 0; index < binary.length; index++) {
+    for (let index = 0; binary.length; index++) {
         let c = binary.charAt(index);
         if (c == 0 && isPrefix) {
             continue;

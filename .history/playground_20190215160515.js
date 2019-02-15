@@ -1,17 +1,17 @@
-// function countSteps (binary) {
-//     let decimal = parseInt(binary, 2);
-//     let step = 0;
-//     while (decimal != 0) {
-//         console.log(`step:${step}, decimal is: ${decimal}`)
-//         step++;
-//         if (decimal % 2 != 0) {
-//             decimal = decimal - 1;
-//         } else {
-//             decimal = decimal / 2;
-//         }
-//     }
-//     return step;
-// }
+function countSteps (binary) {
+    let decimal = parseInt(binary, 2);
+    let step = 0;
+    while (decimal != 0) {
+        console.log(`step:${step}, decimal is: ${decimal}`)
+        step++;
+        if (decimal % 2 != 0) {
+            decimal = decimal - 1;
+        } else {
+            decimal = decimal / 2;
+        }
+    }
+    return step;
+}
 
 console.log(countSteps("011100"));
 
@@ -26,10 +26,10 @@ console.log(countSteps("011100"));
 // 6 1
 // 7 0
 
-function countSteps (binary) {
+function countStep (binary) {
     let step = 0;
     let isPrefix = true;
-    for (let index = 0; index < binary.length; index++) {
+    for (let index = 0; binary.length; index++) {
         let c = binary.charAt(index);
         if (c == 0 && isPrefix) {
             continue;
