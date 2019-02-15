@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+
+</head>
+<body>
+    <tabSwitcher></tabSwitcher>
+    <tabSwitcher></tabSwitcher>
+    <tabSwitcher></tabSwitcher>
+    <tabSwitcher></tabSwitcher>
+    <tabSwitcher></tabSwitcher>
+</body>
+<template>
+    <div class="tabSwitcher">
+        <div class="tab">
+            <button class="tablinks" value=0>London</button>
+            <button class="tablinks" value=1>Paris</button>
+            <button class="tablinks" value=2>Tokyo</button>
+        </div>
+
+        <!-- Tab content -->
+        <div class="container">
+            <div id="London" class="tabcontent" id="tabContent-1">
+                <h3>London</h3>
+                <p>London is the capital city of England.</p>
+            </div>
+
+            <div id="Paris" class="tabcontent" id="tabContent-2">
+                <h3>Paris</h3>
+                <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="Tokyo" class="tabcontent" id="tabContent-3">
+                <h3>Tokyo</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+    <!-- <script src="inheritanceComponent.js" type="module"></script> -->
+    <script src="main.js" type="module"></script>
+</html>
