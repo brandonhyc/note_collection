@@ -4,10 +4,10 @@ function personalizeCoupons(coupons, preferredCategories) {
         b.couponAmount / b.itemPrice - a.couponAmount / a.itemPrice)
     couponsArray = couponsArray.slice(0, 10);
     couponsArray = couponsArray.map(coupon => (
-        {   upc: coupon.upc,
-            category: coupon.category,
-            itemPrice: coupon.itemPrice,
-            couponAmount: coupon.couponAmount
+        {upc: coupon.upc,
+        category: coupon.category,
+        itemPrice: coupon.itemPrice,
+        couponAmount: coupon.couponAmount
         })
         );
     return couponsArray;
