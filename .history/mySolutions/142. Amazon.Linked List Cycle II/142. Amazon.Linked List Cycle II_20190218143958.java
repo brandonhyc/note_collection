@@ -10,7 +10,7 @@
  * }
  */
 public class Solution {
-    public boolean hasCycle(ListNode head) {
+    public ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }
@@ -29,7 +29,10 @@ public class Solution {
             faster = faster.next.next;
         }
 
-        return true;
-        
+        while (head != slow) {
+            head = head.next;
+            slow = slow.next;
+        }      
+        return head;
     }
 }

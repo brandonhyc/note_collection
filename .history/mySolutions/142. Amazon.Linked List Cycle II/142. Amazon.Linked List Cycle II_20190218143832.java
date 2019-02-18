@@ -10,7 +10,7 @@
  * }
  */
 public class Solution {
-    public boolean hasCycle(ListNode head) {
+    public boolean detectCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }
