@@ -15,9 +15,16 @@ class Solution {
                     list.add(nums[j]);
                 }
             } else {
+                // System.out.printf("remove: %d ", nums[i]);
+
                 list.remove(list.get(0));
                 list.add((Integer) nums[i + k - 1]);
             }
+
+            // for (int j = 0; j < list.size(); j++) {
+            //     System.out.printf("%d ", list.get(j));
+            // }
+            //     System.out.println();
 
             int max = Integer.MIN_VALUE;
             for (int j = 0; j < k; j++) {

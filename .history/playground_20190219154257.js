@@ -1,4 +1,4 @@
-console.log(maxPath([1,3,4,6]));
+console.log(maxPath([1,2,3,4]);
 
 
 function maxPath(arr) {
