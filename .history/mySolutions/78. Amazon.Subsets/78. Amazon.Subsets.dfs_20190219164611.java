@@ -37,19 +37,19 @@ public class Solution {
         subset.remove(subset.size() - 1);
         return;
     }
+}
 
-
-    public List<List<Integer>> subsets2(int[] A){
-        // Time: O(n)
-        // Space: O(1)
-        // if (A.length < 3) return 0;
+    public List<List<Integer>> subsets(int[] A){
+    // Time: O(n)
+    // Space: O(1)
+        if (A.length < 3) return 0;
 
         int res = 0;
         int diff = Integer.MIN_VALUE;
         int count = 0;
         int start = 0;
         for (int i = 1; i < A.length; i++){
-            int curDiff = A[i] - A[i - 1];
+            int currDiff = A[i] - A[i - 1];
             if (diff == curDiff){
                 count += i - start - 1 > 0 ? i - start - 1 : 0;
             } else {
@@ -61,7 +61,5 @@ public class Solution {
         }
         res += count;
         System.out.println(res);
-        return new ArrayList<List<Integer>>();
+        return res;
     }
-}
-

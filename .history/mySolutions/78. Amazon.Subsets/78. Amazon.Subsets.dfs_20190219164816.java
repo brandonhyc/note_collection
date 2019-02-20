@@ -49,7 +49,7 @@ public class Solution {
         int count = 0;
         int start = 0;
         for (int i = 1; i < A.length; i++){
-            int curDiff = A[i] - A[i - 1];
+            int currDiff = A[i] - A[i - 1];
             if (diff == curDiff){
                 count += i - start - 1 > 0 ? i - start - 1 : 0;
             } else {
