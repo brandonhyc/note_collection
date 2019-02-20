@@ -26,9 +26,6 @@ public class Solution {
             return max - min;
         }
 
-        min = Math.min(min, root.val);
-        max = Math.max(max, root.val);
-
-        return Math.max(search(root.left, min, max), search(root.right, min, max));
+        min = Math
     }
 }

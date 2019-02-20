@@ -27,8 +27,5 @@ public class Solution {
         }
 
         min = Math.min(min, root.val);
-        max = Math.max(max, root.val);
-
-        return Math.max(search(root.left, min, max), search(root.right, min, max));
     }
 }

@@ -19,16 +19,7 @@ public class Solution {
         return search(root, Integer.MAX_VALUE, Integer.MIN_VALUE);
     }
 
-    private int search(
-            TreeNode root, int min, int max) {
+    private int search(TreeNode root, int max, int min) {
         
-        if (root == null) {
-            return max - min;
-        }
-
-        min = Math.min(min, root.val);
-        max = Math.max(max, root.val);
-
-        return Math.max(search(root.left, min, max), search(root.right, min, max));
     }
 }
