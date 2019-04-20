@@ -58,8 +58,8 @@ int main(int argc, char *argv[]) {
   }
 
   if (argc == 2) {
-    fp.open(argv[1]);
-    fw = stdout; 这里我不太懂。你自己改一下
+    fp = fopen(argv[1], "r");
+    fw = stdout;
     if (!fp.is_open()) {
       fprintf(stderr, "The input file cannot be opened or cannot be read.\n");
       return 2;

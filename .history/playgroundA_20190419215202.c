@@ -12,7 +12,7 @@ asm.cpp (main)
 #include <ifstream> 
 #include <ofstream> 
 #include <fstream>
-
+#include <iostream>
 #include <math.h>
 #include <sstream>
 #include "functions.h"
@@ -27,8 +27,10 @@ using std::endl;
 
 
 int main(int argc, char *argv[]) {
-  ifstream fp; 
-  ofstream fw; 
+  FILE* fp;
+  FILE* fw;
+
+
 
   int imp = 0;
 
@@ -38,13 +40,13 @@ int main(int argc, char *argv[]) {
   }
 
   if (argc == 3) { //read file
-    fp.open(argv[1]);
-    if (!fp.is_open()) {
+    fp = fopen(argv[1], "r");
+    if (fp == NULL) {
       fprintf(stderr, "The input file cannot be opened or cannot be read.\n");
       return 2;
     }
-    fw.open(argv[2])
-    if (!fw.is_open()) {
+    fw = fopen(argv[2], "w");
+    if (fw == NULL) {
       fprintf(stderr, "The output file cannot be opened or cannot be written.\n");
       return 3; //output file cannot be opened/written
     } else {
@@ -58,9 +60,9 @@ int main(int argc, char *argv[]) {
   }
 
   if (argc == 2) {
-    fp.open(argv[1]);
-    fw = stdout; 这里我不太懂。你自己改一下
-    if (!fp.is_open()) {
+    fp = fopen(argv[1], "r");
+    fw = stdout;
+    if (fp == NULL) {
       fprintf(stderr, "The input file cannot be opened or cannot be read.\n");
       return 2;
     } else {

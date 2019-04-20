@@ -205,6 +205,7 @@ int readLines(ofstream& fw) {
     int w = 0;
     char y = (char) zero;
     while (w < org) { //print 00000000
+      fputc(y, fw);
       fw << y; 这里可能错。你改一下
       w++;
     }
@@ -342,8 +343,7 @@ int readLines(ofstream& fw) {
     msb = msb << 4;
     int d = msb + lsb;
     char y = (char) d;
-    fw << y; 这里可能错。你改一下
-    
+    fputc(y, fw);
   } //end of for loop
 
   //fill remaining bytes with HLT
@@ -352,7 +352,7 @@ int readLines(ofstream& fw) {
     char z = (char) zero;
     int e = line_count - 1;
     while (e < 255) { //print 00000000
-      fw << z; 这里可能错。你改一下
+      fputc(z, fw); //0000
       e++;
     }
   }

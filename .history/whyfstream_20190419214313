@@ -1,0 +1,3 @@
+ifstream because it is a bit more modular than fopen. 
+
+https://stackoverflow.com/questions/6399822/reading-a-text-file-fopen-vs-ifstream

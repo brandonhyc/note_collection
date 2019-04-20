@@ -32,8 +32,9 @@ int line_count = 0; //length of file input
 int org = 0;
 
 /* first pass, read labels */
-int implement(ifstream& fp) {
+int implement(istream& fp) {
   string output;
+  char b[256] = {' '};
   string instruct;
   bool cont = true; //for checking space/tabs
 
@@ -42,10 +43,8 @@ int implement(ifstream& fp) {
       fprintf(stderr, "The program is too large.\n");
       return 4;
     }
-    
-    string s; //reads entire line
-    getline(fp, s);
-    
+
+    string s = b; //reads entire line
     char first = s.at(0);
     int comment = 0;
 
@@ -184,7 +183,7 @@ int implement(ifstream& fp) {
       line_count++;
     } //end of if (cont)
   } //end of while loop
-fp.close();
+fclose(fp);
 if (org > line_count) { //>256?
   fprintf(stderr, "The program is too large.\n");
   return 4;
@@ -193,7 +192,7 @@ if (org > line_count) { //>256?
 } //end of implement();
 
 /* 2nd pass, produce output */
-int readLines(ofstream& fw) {
+int readLines(FILE* fw) {
   string out = "";
   int msb = 0;
   bool lab_found = false;
@@ -205,7 +204,7 @@ int readLines(ofstream& fw) {
     int w = 0;
     char y = (char) zero;
     while (w < org) { //print 00000000
-      fw << y; 这里可能错。你改一下
+      fputc(y, fw);
       w++;
     }
   }
@@ -342,8 +341,7 @@ int readLines(ofstream& fw) {
     msb = msb << 4;
     int d = msb + lsb;
     char y = (char) d;
-    fw << y; 这里可能错。你改一下
-    
+    fputc(y, fw);
   } //end of for loop
 
   //fill remaining bytes with HLT
@@ -352,11 +350,11 @@ int readLines(ofstream& fw) {
     char z = (char) zero;
     int e = line_count - 1;
     while (e < 255) { //print 00000000
-      fw << z; 这里可能错。你改一下
+      fputc(z, fw); //0000
       e++;
     }
   }
-  fw.close();
+  fclose(fw);
   return 0;
 } //end of function
 
