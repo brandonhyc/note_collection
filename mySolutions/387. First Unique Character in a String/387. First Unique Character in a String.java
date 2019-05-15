@@ -20,7 +20,6 @@ class Solution {
                 break;
             }
         }
-        
         return result;
     }
 }
