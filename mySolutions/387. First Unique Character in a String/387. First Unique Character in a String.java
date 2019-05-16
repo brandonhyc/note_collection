@@ -2,7 +2,6 @@ class Solution {
     public int firstUniqChar(String s) {
         Map<Character, Integer> map = new HashMap<>();
         int result = -1;
-        
         for (int i = 0; i < s.length(); i++) {
             
             if (!map.containsKey(s.charAt(i))) {
@@ -20,7 +19,7 @@ class Solution {
                 break;
             }
         }
-        
+
         return result;
     }
 }
