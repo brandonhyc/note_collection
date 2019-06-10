@@ -145,6 +145,14 @@ To style specified parts of an element.
 ```css
 ::after, ::before, ::first-letter, ::first-line, ::selection
 ```
+## CSS Wildcard Selectors (*, ^ and $)
+```js
+$("div[id$='-div']").hide();
+```
+```html
+<div class="row" id="a-div"></div>
+<div class="row" id="b-div"></div>
+```
 
 ## CSS @rules
 * The @import: rule imports another style sheet into the current style sheet.
@@ -255,7 +263,4 @@ px是像素，是固定单位
 em是相对于直接父元素单位的大小，em就是倍数，是相对单位
 rem是相对于根元素的大小，rem也是倍数，是相对单位
 
-
-# jQuery
-1. $() 也就是 jQuery()
 
