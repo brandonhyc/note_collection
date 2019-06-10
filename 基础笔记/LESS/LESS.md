@@ -1,4 +1,5 @@
 ### LESS
 a css pre-processor, also a dynamic style language extents capability of CSS. 
 
-### using mixins, 
+### what is mixins
+Nixin is making groups of CSS declarations that you can pass in customized values.
