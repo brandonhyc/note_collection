@@ -26,6 +26,7 @@ StringBuffer allows multiple thread at a time
 
 
 ### polymorphism
+For different subclasses can have different implementations of a method inherit from parent class
     Salary s = new Salary();
     Employee e = new Salary();
     s.mailCheck();
