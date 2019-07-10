@@ -51,6 +51,30 @@ private     │   +   │         │          │          │
 + : accessible
 blank : not accessible
 
+### LinkedList vs Array
+Linked list advantages
+1) Dynamic size
+2) it's easy to insertion/deletion
+
+Linked lists drawbacks:
+1) Can't do random access is not allowed
+2) Extra memory space for a pointer is required with each element of the list
+3) Arrays have better cache locality that can make a pretty big difference in performance
+
+### List vs Map
+* Java map: An object that maps keys to values. A map cannot contain duplicate keys
+* Java list: An ordered collection. Allow to access elements by their integer index (position in the list)
+
+### Overloading vs Overriding
+Overloading allows different methods to have the same name.
+Overriding allows a subclass provide a specific implementation of a method that is already in parent classes
+
+### Hash table
+Search		avg O(1) worst O(n) Insert	avg	O(1)	worst O(n) Delete	avg	O(1)	worst O(n)
+
+### Overriding Hashcode and equals
+Collections like HashMap and HashSet use hashcode to locate the object in the collection. 1. use hashcode to find the right bucket, 2. compare objects in that bucket using equals. 
+
 
 
 ## String vs StringBuilder vs StringBuffer
