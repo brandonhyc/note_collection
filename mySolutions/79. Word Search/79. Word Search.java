@@ -14,7 +14,7 @@ class Solution {
             for (int y = 0; y < board[0].length; y++) {
 
                 if (board[x][y] == word.charAt(0)) {
-                    result = dfs(board, word, 0, x, y);
+                    result = result || dfs(board, word, 0, x, y);
                 }
             }
         }
@@ -24,14 +24,15 @@ class Solution {
     private boolean dfs(char[][] board, String word, int start, int ox, int oy) {
 
         if (start == word.length() - 1 && board[ox][oy] == word.charAt(start)) {
-            System.out.printf("char: %s\n", word.charAt(start));
+            // System.out.printf("char: %s\n", word.charAt(start));
             return true;
         }
         boolean result = false;
 
         int[] dx = { 1, 0, -1, 0 };
         int[] dy = { 0, 1, 0, -1 };
-        System.out.printf("start char: %s, at: (%d, %d)\n", word.charAt(start), ox, oy);
+        // System.out.printf("start char: %s, at: (%d, %d)\n", word.charAt(start), ox,
+        // oy);
         for (int i = 0; i < dx.length; i++) {
 
             int nx = ox + dx[i];
@@ -41,7 +42,10 @@ class Solution {
                 continue;
             }
             if (board[nx][ny] == word.charAt(start + 1)) {
+                board[ox][oy] ^= 256;
                 result = result || dfs(board, word, start + 1, nx, ny);
+                board[ox][oy] ^= 256;
+
             }
         }
 
