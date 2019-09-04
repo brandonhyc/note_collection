@@ -28,6 +28,7 @@ The fact that the order of inorder is `leftEnd -> root -> rightEnd`, we realize 
 .98.  Validate Binary Search Tree
 .285. Inorder Successor in BST  `Successor` + `BST`
 
+.257. Binary Tree Paths 简单，可以不做
 
 ### preorder traverse
 `root -> leftEnd -> (root) -> rightEnd` from this order, we realize it takes a step back to root. That's quite like the mechanism of `Stack`. So `Stack` is commonly used in iterative traversing preorder.
@@ -38,5 +39,20 @@ The fact that the order of inorder is `leftEnd -> root -> rightEnd`, we realize 
 .116. Populating Next Right Pointers in Each Node
 .117. Populating Next Right Pointers in Each Node II -- Dummy Node
 
-## Height
+### Height
 .110. Balanced Binary Tree
+
+### Successor/predecessor 
+Successor means the next larger node. To solve this kind of questions, some conditions are essentially helpful to use:
+1. the tree is `BST`
+2. A successor can only be: a. the smallest node on the right; b. its parent.     
+3. Store a `prev` node to record its parent. See case:
+```
+    5
+   / \
+  3   6
+ / \
+2   4
+
+Successor of 4 is 5, so set prev = cur for searching in cur.val > target.val
+```

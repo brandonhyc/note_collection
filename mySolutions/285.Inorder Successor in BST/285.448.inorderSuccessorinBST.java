@@ -56,7 +56,7 @@ public class Solution {
         while (p.left != null) {
             p = p.left;
         }
-        return p;
+        return p    ;
 
 
     }
