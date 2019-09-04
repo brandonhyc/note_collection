@@ -28,12 +28,13 @@ The fact that the order of inorder is `leftEnd -> root -> rightEnd`, we realize 
 .98.  Validate Binary Search Tree
 .285. Inorder Successor in BST  `Successor` + `BST`
 
-.257. Binary Tree Paths 简单，可以不做
 
 ### preorder traverse
 `root -> leftEnd -> (root) -> rightEnd` from this order, we realize it takes a step back to root. That's quite like the mechanism of `Stack`. So `Stack` is commonly used in iterative traversing preorder.
+This order is very much the path of `DFS` aka `Root -> Leaf`.
 
 .114. Flatten Binary Tree to Linked List
+.257. Binary Tree Paths == .129. Sum Root to Leaf Numbers 简单，可以不做
 
 ### levelorder traverse
 .116. Populating Next Right Pointers in Each Node
