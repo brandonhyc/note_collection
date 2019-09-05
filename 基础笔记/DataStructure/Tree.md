@@ -42,6 +42,7 @@ This order is very much the path of `DFS` aka `Root -> Leaf`.
 
 ### Height
 .110. Balanced Binary Tree
+.366. Find Leaves of Binary Tree -- DFS
 
 ### Successor/predecessor 
 Successor means the next larger node. To solve this kind of questions, some conditions are essentially helpful to use:
