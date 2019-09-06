@@ -3,6 +3,8 @@
 ## feature
 TOO MANY EDGE CASES. ASK 1. empty array[]. 2. sorted? 3. duplicate? 4. in-place? 5. partial? pedis
 
+.41. First Missing Positive
+
 ## Move, Store the need and Leave the left
 Use slow and fast point, think of using one array as two 
 
@@ -18,3 +20,7 @@ After reversing first k numbers : 5 6 7[4 3 2 1]
 After revering last n-k numbers : 5 6 7 1 2 3 4 --> Result
 
 ```
+.189. Rotate Array
+
+## 两数组重合记录
+用 nums[] +-
