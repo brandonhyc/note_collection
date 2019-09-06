@@ -1,5 +1,9 @@
 # Array
 
+
+## 重新起步 set sum = 0 in condition
+.134. Gas Station
+
 ## feature
 TOO MANY EDGE CASES. ASK 1. empty array[]. 2. sorted? 3. duplicate? 4. in-place? 5. partial? pedis
 
@@ -24,3 +28,5 @@ After revering last n-k numbers : 5 6 7 1 2 3 4 --> Result
 
 ## 两数组重合记录
 用 nums[] +-
+
+.299. Bulls and Cows
