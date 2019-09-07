@@ -26,7 +26,8 @@ After revering last n-k numbers : 5 6 7 1 2 3 4 --> Result
 ```
 .189. Rotate Array
 
-## 两数组重合记录
-用 nums[] +-
+## 出现数字记数
+用 nums[] +- 抵消。为0时即反转
 
 .299. Bulls and Cows
+.169. Majority Element
