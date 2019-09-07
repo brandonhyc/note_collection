@@ -31,3 +31,6 @@ After revering last n-k numbers : 5 6 7 1 2 3 4 --> Result
 
 .299. Bulls and Cows
 .169. Majority Element
+
+## Slide Window
+.219. Contains Duplicate II
