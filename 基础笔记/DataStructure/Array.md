@@ -45,3 +45,6 @@ Suppose the first meet at step `k`, the distance between the start node of list 
 
 ## 简单dp
 .119. Pascal's Triangle II
+
+## Bucket Sort
+.274. H-index   
