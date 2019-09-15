@@ -16,11 +16,12 @@ class Solution {
         if (start >= n + 1) {
             return;
         }
-        
+        // if pick
         combination.add(start);
         dfs(n, k - 1, results, combination, start + 1);
         combination.remove(combination.size() - 1);
         
+        // if not pick
         dfs(n, k, results, combination, start + 1);
     }
 }
