@@ -90,3 +90,67 @@ class Solution {
         }
     }
 }
+
+class Solution {
+    int[] dx = {1, 0, -1, 0};
+    int[] dy = {0, 1, 0, -1};
+    
+    public void solve(char[][] board) {
+        if (board.length == 0) {
+            return;
+        }
+        
+        Deque<Integer> deque = new ArrayDeque<>();
+        
+        for (int y = 0; y < board.length; y++) {
+            for (int x = 0; x < board[0].length; x++) {
+                if (y > 0 && y < board.length - 1 && x > 0 && x < board[0].length - 1) {
+                    continue;
+                }
+                if (board[y][x] == 'O') {
+                    // System.out.printf("x: %s, y: %s\n", x, y);
+                    // System.out.printf("x: %d, y: %d, board[y][x]: %c\n", x, y, board[y][x]);
+                    board[y][x] = 'V';
+                    deque.offer(x + y * board[0].length);
+                }
+            }
+        }
+        
+        while (!deque.isEmpty()) {
+            int xy = deque.poll();
+            int x = xy % board[0].length;
+            int y = xy / board[0].length;
+            
+            for (int i = 0; i < 4; i++) {
+                int nx = x + dx[i];
+                int ny = y + dy[i];
+
+                if (nx < 0 || nx >= board[0].length || ny < 0 || ny >= board.length) {
+                    continue;
+                }
+                if (board[ny][nx] == 'O') {
+                    // System.out.printf(
+                    //     "x: %d, y: %d, nx: %d, ny: %d, board[y][x]: %c, board[ny][nx]: %c\n", 
+                    //     x, y, nx, ny, board[y][x], board[ny][nx]
+                    // );
+                    board[ny][nx] = 'V';
+                    deque.offer(nx + ny * board[0].length);
+                }
+
+            }
+        }
+
+        for (int y = 0; y < board.length; y++) {
+            for (int x = 0; x < board[0].length; x++) {
+                if (board[y][x] == 'V') {
+                    board[y][x] = 'O';
+                } else if (board[y][x] =='O') {
+                    board[y][x] = 'X';
+                }
+            }
+        }
+        
+        return;
+    }
+    
+}
