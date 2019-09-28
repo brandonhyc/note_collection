@@ -1,39 +1,25 @@
 class Solution {
-    public List<Integer> spiralOrder(int[][] matrix) {
-        if (matrix.length == 0 ) {
-            return new ArrayList<>();
+    public void rotate(int[][] matrix) {
+        
+        int top = 0; 
+        int bot = matrix.length - 1;
+        
+        while (top < bot) {
+            int[] temp = matrix[top];
+            matrix[top] = matrix[bot];
+            matrix[bot] = temp;
+            
+            top++;
+            bot--;
         }
         
-        int leftEnd = 0;
-        int rightEnd = matrix[0].length - 1;
-        int topEnd = 0;
-        int botEnd = matrix.length - 1;
-        
-        List<Integer> result = new ArrayList<>();
-        
-        while (leftEnd <= rightEnd && topEnd <= botEnd) {
-            for (int i = leftEnd; i <= rightEnd; i++) {
-                result.add(matrix[topEnd][i]);
-            }
-            topEnd++;
-            for(int i = topEnd; i <= botEnd; i++) {
-                result.add(matrix[i][rightEnd]);
-            }
-            rightEnd--;
-            if (botEnd >= topEnd) {
-                for(int i = rightEnd; i >= leftEnd; i--) {
-                    result.add(matrix[botEnd][i]);
-                }
-                botEnd--;
-            }
-            if (leftEnd <= rightEnd) {
-                for(int i = botEnd; i >= botEnd; i--) {
-                    result.add(matrix[i][leftEnd]);
-                }
-                leftEnd++;
+        // swap the symmetry
+        for (int x = 0; x < matrix.length; x++) {
+            for (int y = 0; y < x && y < matrix[0].length; y++) {
+                int temp = matrix[x][y];
+                matrix[x][y] = matrix[y][x];
+                matrix[y][x] = temp;
             }
         }
-        
-        return result;
     }
 }
