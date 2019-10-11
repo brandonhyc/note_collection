@@ -12,3 +12,9 @@ solutions: n!
 
 n!/r!(n − r)!
 
+
+
+# Way to remove duplicate
+1. use start
+2. use isVisited boolean[]
+3. use start < i && num[i] == num[i - 1], skip
