@@ -4,3 +4,11 @@ remember when taking out the substring as a word, the loop should be i <= str.le
 # subset 时间复杂度
 https://www.1point3acres.com/bbs/thread-117602-1-1.html
 
+# Permutations without Repetition
+solutions: n!
+
+# Combinations
+solutions: n!
+
+n!/r!(n − r)!
+
