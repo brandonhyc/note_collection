@@ -1,6 +1,9 @@
 
 #Tree 
 
+## PRE
+In some questions, it needs to utilize the relationship of prev&next in during traversal, 1. use global variable in recursion to store pre 2. iterative is storing the pre outside the loop 
+
 ## BST
 The most common type of tree all `nodes in left child` < `root` < `nodes in right child`. This is the most significant feature of `BST`. Utilize this feature to performance any search  
 
