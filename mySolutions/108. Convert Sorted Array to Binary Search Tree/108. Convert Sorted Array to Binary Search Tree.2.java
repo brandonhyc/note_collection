@@ -27,9 +27,4 @@ class Solution {
         root.right = generateBST(nums, mid + 1, right);
         
 //         0 1 -> 0
-//         0 1 2 -> 1
-//         0 1 2 3 -> 1
-        
-        return root;
-    }
-}
+//         0 1 
