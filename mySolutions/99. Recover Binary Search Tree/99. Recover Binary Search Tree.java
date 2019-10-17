@@ -8,11 +8,16 @@
  * }
  */
 class Solution {
-    public List<Integer> closestKValues(TreeNode root, double target, int k) {
-        LinkedList<Integer> window = new LinkedList<>(); 
+    public void recoverTree(TreeNode root) {
+     
+        TreeNode firstDefeat = null;
+        TreeNode secondDefeat = null;
+        
         Stack<TreeNode> stack = new Stack<>();
+        TreeNode pre = null;
         
         while (root != null || !stack.isEmpty()) {
+            
             while (root != null) {
                 stack.push(root);
                 root = root.left;
@@ -20,20 +25,19 @@ class Solution {
             
             root = stack.pop();
             
-            if (window.size() == k) {
-                if (Math.abs(root.val - target) > Math.abs(target - window.get(0))) {
-                    return window;
+            if (pre != null && pre.val > root.val) {
+                if (firstDefeat == null) {
+                    firstDefeat = pre;
                 }
-                window.removeFirst();
-            }
+                secondDefeat = root;
+            }            
             
-            window.add(root.val);
-            
+            pre = root;
             root = root.right;
         }
         
-        return window;
-        
+        int temp = firstDefeat.val;
+        firstDefeat.val = secondDefeat.val;
+        secondDefeat.val = temp; 
     }
-        
 }
