@@ -58,3 +58,13 @@ class Solution {
         return dummy.next;
     }
 }
+
+  
+  0. understand very well
+  1. general idea -> talk about it 
+  2. ask if that's the solution you want
+  3. optimize -> talk about it (write it down in your words if too complex)
+  
+  4. write your code
+  5. try the normal cases
+  6. try the edge case
