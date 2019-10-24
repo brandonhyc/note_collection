@@ -26,6 +26,8 @@ StringBuffer allows multiple thread at a time
 
 
 ### polymorphism
+One reference variable can refer to any object of declared type of its subtype.
+
 For different subclasses can have different implementations of a method inherit from parent class
     Salary s = new Salary();
     Employee e = new Salary();
