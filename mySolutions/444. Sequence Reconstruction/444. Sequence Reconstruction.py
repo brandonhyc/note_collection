@@ -1,53 +1,49 @@
 from collections import deque
 
-class Solution(object):
-    def sequenceReconstruction(self, org, seqs):
-        """
-        :type org: List[int]
-        :type seqs: List[List[int]]
-        :rtype: bool
-        """
-        
-        if len(org) < 1:
-            return False
+class Solution:
+    def sequenceReconstruction(self, org: List[int], seqs: List[List[int]]) -> bool:
 
-        # init and build graph
-
+        inDegree = {}
+        graph = {}
         order = []
-        size = len(org) + 1
-        inDegree = {i: 0 for i in range(size)}
-        graph = {i: [] for i in range(size)}
 
+        # init
+        for seq in seqs: 
+            for i in range(len(seq)):
+                inDegree[seq[i]] = 0
+                graph[seq[i]] = []
+
+        # build
         for seq in seqs:
-            for i in range(0, len(seq) - 1):
-                parent = seq[i - 1]
-                child = seq[i]
-                
+            for i in range(len(seq) - 1):
+                parent = seq[i]
+                child = seq[i + 1]
+
                 inDegree[child] += 1
                 graph[parent].append(child)
 
-        # seed
-        sources = deque()
-
-        for i in range(1, len(inDegree) - 1):
-            print ("here: ", i)
-            if inDegree[i] == 0:
-                sources.append(i)
         
+        sources = deque()
+        # seed
+        for key in inDegree:
+            if inDegree[key] == 0:
+                sources.append(key)
+
         # traverse
         while sources:
-            if len(sources) >= 2:
+            if len(sources) > 1:
                 return False
+            
             source = sources.popleft()
             order.append(source)
-            
-            for nextNum in graph[source]:
-                inDegree[nextNum] -= 1
 
-                if inDegree[nextNum] == 0:
-                    sources.append(nextNum)
-
+            for i in graph[source]:
+                inDegree[i] -= 1
+                if inDegree[i] == 0:
+                    sources.append(i)
+        
+        for key in inDegree:
+            if inDegree[key] != 0:
+                return False
+        
         return order == org
-
-
-    [1,2] [1,3] [1,2,3]
