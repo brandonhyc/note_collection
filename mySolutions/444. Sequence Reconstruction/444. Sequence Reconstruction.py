@@ -42,4 +42,8 @@ class Solution:
                 if inDegree[i] == 0:
                     sources.append(i)
         
+        for key in inDegree:
+            if inDegree[key] != 0:
+                return False
+        
         return order == org
