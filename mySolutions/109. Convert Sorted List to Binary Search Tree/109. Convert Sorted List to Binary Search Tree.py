@@ -39,4 +39,7 @@ class Solution:
         
         return toBST(0, size - 1)
         
-        
+    while(fast!=tail&&fast.next!=tail){
+        fast = fast.next.next;
+        slow = slow.next;
+    }
