@@ -29,7 +29,3 @@ class Solution:
             root = root.right
                 
         return True
-        
-        
-        
-        
