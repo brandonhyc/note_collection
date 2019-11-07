@@ -7,10 +7,8 @@
 ## feature
 TOO MANY EDGE CASES. ASK 1. empty array[]. 2. sorted? 3. duplicate? 4. in-place? 5. partial? pedis
 
-.41. First Missing Positive
-
-## Move, Store the need and Leave the left
-Use slow and fast point, think of using one array as two 
+## Closest in array
+When tackling question to do with closest distance in array, |a - b|, using memo can be useful. Think of iterating from left to right, the closest two elements are the most recent occurrence two. 
 
 ## 三步反转
 这个方法就用于数组平移

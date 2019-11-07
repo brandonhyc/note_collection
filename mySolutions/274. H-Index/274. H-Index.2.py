@@ -22,6 +22,8 @@ class Solution:
 # h 5 4 3 2 1
 # v 0 1 3 5 6
 
+# Find the first value smaller than h-index, h-1
+
 # h 1
 # v 0
 
