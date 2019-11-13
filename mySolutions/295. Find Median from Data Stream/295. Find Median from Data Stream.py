@@ -1,45 +1,49 @@
 import heapq 
 class MedianFinder:
 
-    leftHeap = []
-    rightHeap = []
-    
+    maxHeap = []
+    minHeap = []
+
     def __init__(self):
         """
         initialize your data structure here.
         """
+        self.maxHeap = []
+        self.minHeap = []
 
     def addNum(self, num: int) -> None:
 
-        leftHeap = self.leftHeap
-        rightHeap = self.rightHeap
+        maxHeap = self.maxHeap
+        minHeap = self.minHeap
 
-        leftLargest = leftHeap[-1] if leftHeap else sys.maxsize
-        rightSmallest = rightHeap[0] if rightHeap else -sys.maxsize - 1
+        leftLargest = -maxHeap[0] if maxHeap else sys.maxsize
+        rightSmallest = minHeap[0] if minHeap else -sys.maxsize - 1
 
         if leftLargest >= num:
-            heapq.heappush(leftHeap, num)
+            heapq.heappush(maxHeap, -num)
         else:
-            heapq.heappush(rightHeap, num)
+            heapq.heappush(minHeap, num)
 
-        self.rebalance(leftHeap, rightHeap)
+        self.rebalance(maxHeap, minHeap)
 
-    def rebalance(self, leftHeap, rightHeap):
-        if len(leftHeap) < len(rightHeap):
-            heapq.heappush(leftHeap, rightHeap.pop(0))
-        elif len(leftHeap) > len(rightHeap) + 1:
-            heapq.heappush(rightHeap, leftHeap.pop())
+    def rebalance(self, maxHeap, minHeap):
+        if len(maxHeap) < len(minHeap):
+            heapq.heappush(maxHeap, -heapq.heappop(minHeap))
+        elif len(maxHeap) > len(minHeap) + 1:
+            heapq.heappush(minHeap, -heapq.heappop(maxHeap))
 
     def findMedian(self) -> float:
-        leftHeap = self.leftHeap
-        rightHeap = self.rightHeap
         
-        if len(leftHeap) == len(rightHeap):
-            return (leftHeap[-1] + rightHeap[0]) / 2
+        maxHeap = self.maxHeap
+        minHeap = self.minHeap
+        # print ("maxHeap", maxHeap)
+        # print ("minHeap", minHeap)
+        
+        if len(maxHeap) == len(minHeap):
+            return (-maxHeap[0] + minHeap[0]) / 2
         
         # total odd number
-        return leftHeap[-1]
-
+        return -maxHeap[0]
 
 # Your MedianFinder object will be instantiated and called as such:
 # obj = MedianFinder()
