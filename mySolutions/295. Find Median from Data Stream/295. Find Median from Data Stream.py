@@ -3,7 +3,7 @@ class MedianFinder:
 
     maxHeap = []
     minHeap = []
-    
+
     def __init__(self):
         """
         initialize your data structure here.
@@ -44,7 +44,6 @@ class MedianFinder:
         
         # total odd number
         return -maxHeap[0]
-
 
 # Your MedianFinder object will be instantiated and called as such:
 # obj = MedianFinder()
