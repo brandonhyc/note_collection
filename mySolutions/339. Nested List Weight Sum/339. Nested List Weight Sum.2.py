@@ -43,27 +43,32 @@
 from collections import deque
 
 class Solution:
-    def depthSum(self, nestedList: List[NestedInteger]) -> int:
+    def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
       
       queue = deque()
       
       for element in nestedList:
         queue.append(element)
       
-      res = 0
-      depth = 0
+      totalSum = 0
+      preLevelSum = 0
+      curLevelSum = 0
+            
       while queue:
         size = len(queue)
-        depth += 1
+        curLevelSum = 0
         
         for i in range(size):
           element = queue.popleft()
           
           if element.getInteger() != None:
-            res += depth * element.getInteger()
+            curLevelSum += element.getInteger()    
           else:
             list = element.getList();
             for nextElement in list:
               queue.append(nextElement)
+        preLevelSum += curLevelSum
+        totalSum += preLevelSum
+        # print("preLevelSum", preLevelSum, "curLevelSum", curLevelSum, "totalSum", totalSum)
         
-      return res
+      return totalSum
