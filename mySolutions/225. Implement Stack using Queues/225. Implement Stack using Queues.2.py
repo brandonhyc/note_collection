@@ -12,6 +12,7 @@ class MyStack:
         """
         Push element x onto stack.
         """
+        str.isnumeric
         self.inputQueue.append(x)
 
     def pop(self) -> int:
