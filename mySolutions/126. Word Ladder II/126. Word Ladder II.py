@@ -1,54 +1,67 @@
 from collections import deque
 class Solution:
     def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -> List[List[str]]:
-      # bfs
-      queue = deque()
-      queue.append(beginWord)
-      wordMap = {}
-      
-      while queue:
-        size = len(queue)
+        # bfs
+        queue = deque()
+        queue.append(beginWord)
+        wordMap = {}
+        distance = {}
+        depth = 0
+        isFound = False
+        wordSet = set(wordList)
+        distance[beginWord] = 0
 
-        for i in range(size):
-          curWord = queue.popleft()
-          
-          wordList.remove(curWord)
-          if curWord == endWord:
-            break;
+        while queue:
+            size = len(queue)
+            depth += 1
+
+            for i in range(size):
+                curWord = queue.popleft()
+                nextWords = self.getNextWords(curWord, wordSet)
+                wordMap[curWord] = nextWords
+        
+                for word in nextWords:
+                    if word not in distance:
+                        if word == endWord:
+                            isFound = True
+                        distance[word] = depth
+                        queue.append(word)
             
-          nextWords = []
-          for i in range(len(curWord)):
+            if isFound:
+                break
+
+        res = []
+        path = []
+        path.append(beginWord)
+        self.dfs(beginWord, endWord, wordMap, distance, path, res)
+        
+        return res
+
+    def getNextWords(self, curWord, wordSet):
+        nextWords = []
+        for i in range(len(curWord)):
             arr = list(curWord)
 
             for j in range(26):
-              ch = chr(ord('a') + j)
-              if curWord[i] == ch:
-                continue
-              arr[i] = ch
-              word = "".join(arr)
-              if word in wordList and word not in wordMap:
-                wordMap[word] = []
-                nextWords.append(word)
-                queue.append(word)
-                print("wordList", wordList, "nextWords", nextWords)
-          
-          wordMap[curWord] = nextWords
-          print ("wordMap", wordMap)
-      res = []
-      self.dfs(beginWord, endWord, wordMap, [], res)
+                ch = chr(ord('a') + j)
+                if curWord[i] == ch:
+                    continue
+                arr[i] = ch
+                word = "".join(arr)
+                if word in wordSet:
+                    nextWords.append(word)
+        return nextWords
       
-      return res
-      
-    def dfs(self, beginWord, endWord, wordMap, path, res):
-      if beginWord == endWord:
-        path.append(endWord)
-        res.append(path[:])
-        return 
-      
-      for nextWord in wordMap[beginWord]:
-        path.append(beginWord)
-        self.dfs(nextWord, endWord, wordMap, path, res)
-        path.remove(beginWord)
-      
-      return
+    def dfs(self, beginWord, endWord, wordMap, distance, path, res):
+        if beginWord == endWord:
+            res.append(path[:])
+            return 
+
+        for nextWord in wordMap.get(beginWord, []):
+            if distance[nextWord] == distance[beginWord] + 1:
+                path.append(nextWord)
+                self.dfs(nextWord, endWord, wordMap, distance, path, res)
+                path.remove(nextWord)
+        
+        return
       
