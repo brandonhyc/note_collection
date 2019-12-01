@@ -27,14 +27,11 @@ class LRUCache:
         return self.map[key]
 
     def put(self, key: int, value: int) -> None:
+        if key in self.map:
+            self.get(key)
+        else:
+            self.queue.append(key)
         self.map[key] = value
-        
-        for i in range(len(self.queue)):
-            lKey = self.queue.popleft()
-            if lKey == key:
-                continue
-            self.queue.append(lKey)
-        self.queue.append(key)
         
         if len(self.queue) > self.capacity:
             item = self.queue.popleft()
