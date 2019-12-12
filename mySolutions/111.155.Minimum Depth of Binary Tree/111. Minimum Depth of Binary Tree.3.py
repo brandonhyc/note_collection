@@ -29,4 +29,3 @@ class Solution:
                     queue.append(root.left)
                 if root.right != None:
                     queue.append(root.right)
-                
