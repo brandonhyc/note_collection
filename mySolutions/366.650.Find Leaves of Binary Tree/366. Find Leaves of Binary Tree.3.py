@@ -29,7 +29,3 @@ class Solution:
         result[rootHeight].append(root.val)
         
         return rootHeight
-        
-        
-        
-        
