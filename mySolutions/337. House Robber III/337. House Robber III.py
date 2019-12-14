@@ -32,6 +32,6 @@ class Solution:
         # if include immediate child, there are 3 cases, both left0 and right0, 0/1, 1/0, 
         sum0 = root.val + left1 + right1
         # if not include child, only one case
-        sum1 = max(left0 + right0, left0 + right1, left1 + right0, left1 + right1)
+        sum1 = max(left1, left0) + max(right1, right0)
 
         return [sum0, sum1]
