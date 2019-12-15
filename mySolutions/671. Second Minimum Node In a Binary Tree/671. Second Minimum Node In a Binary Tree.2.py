@@ -5,6 +5,8 @@
 #         self.left = None
 #         self.right = None
 
+# 这道题容易想歪，其实就是老老实实 traverse 就足够了。总体来说没有再做的必要了
+
 from collections import deque
 
 class Solution:
