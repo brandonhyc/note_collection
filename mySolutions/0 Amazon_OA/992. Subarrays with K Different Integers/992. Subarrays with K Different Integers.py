@@ -1,5 +1,10 @@
 class Solution:
-    def lengthOfLongestSubstringKDistinct(self, s: str, k: int) -> int:
+    def subarraysWithKDistinct(self, nums: List[int], k: int) -> int:
+        if len(nums) == 0 or k == 0:
+            return 0
+        return self.numSubstringAtMostKDistinct(nums, k) - self.numSubstringAtMostKDistinct(nums, k - 1)
+        
+    def numSubstringAtMostKDistinct(self, s: List[int], k: int) -> int:
         
         if k == 0 or len(s) == 0:
             return 0
@@ -7,7 +12,7 @@ class Solution:
         charCount = {}
         left = 0
         distinctCount = 0
-        maxLen = 0
+        res = 0
         
         for right in range(len(s)):
             ch = s[right]
@@ -26,6 +31,6 @@ class Solution:
                 
                 left += 1
             
-            maxLen = max(right - left + 1, maxLen)
+            res += right - left + 1
             
-        return maxLen
+        return res
