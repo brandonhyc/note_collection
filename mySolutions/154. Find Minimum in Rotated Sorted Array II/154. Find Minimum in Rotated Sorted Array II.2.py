@@ -4,6 +4,7 @@ class Solution:
         left = 0
         right = len(nums) - 1
         top = nums[-1]
+        
         while left < right:
             # normal asc order
             if nums[left] < nums[right]:
@@ -11,8 +12,10 @@ class Solution:
             mid = left + (right - left) // 2
             if nums[mid] < top:
                 right = mid
-            else:
+            elif nums[mid] > top:
                 left = mid + 1
-                
+            else:
+                left += 1
+            
         return min(nums[left], nums[right])
                 
