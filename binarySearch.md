@@ -3,7 +3,7 @@ Find a target number in a space/range. Reduce the size of the search space by di
 
 ## Question should ask before start
 1. input: order? ascend/descend / rotated?
-2. input: form? array/list
+2. input: form? array/list/ stream(infinite)
 3. input: will have the target / not .. if smaller, if larger?
 4. input: nums can be duplicated / not
 5. output: return index / value
