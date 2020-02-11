@@ -10,6 +10,9 @@ Find a target number in a space/range. Reduce the size of the search space by di
 6. output: if not found, -1 ?
 
 
+## Pain point
+When solving this kind of question, there will always a pitfall for while loop condition. We set start <= end or start < end, a thumb of rule will be "are we SURE sure we can find rtarget in current array when returning" d
+
 ## Binary Search 二分法查找
 ```java
     public int lastPosition(int[] nums, int target) {
