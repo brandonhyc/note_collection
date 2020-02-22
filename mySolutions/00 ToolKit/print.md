@@ -1,5 +1,5 @@
 # Print Map
-Arrays.toString(map.entrySet().toArray())
+Arrays.toString(map.entrySet().toArray());
 
 # init Map
 HashMap<String, String> h = new HashMap<String, String>() {{
