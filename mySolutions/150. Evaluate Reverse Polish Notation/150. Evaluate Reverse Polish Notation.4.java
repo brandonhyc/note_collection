@@ -1,3 +1,4 @@
+import java.util.EmptyStackException;
 class Solution {
     public int evalRPN(String[] tokens) {
         
@@ -14,27 +15,26 @@ class Solution {
             
             if (symbols.contains(str)) {
                 try {
-                    int num1 = stack.pop();
-                    int num2 = stack.pop();
                     int res = 0;
                     if (str.equals("+")) {
-                        res = num1 + num2;
+                        res = add(stack);
                     }
                     else if (str.equals("-")) {
-                        res = num2 - num1;
+                        res = minus(stack);
                     }
                     else if (str.equals("*")) {
-                        res = num2 * num1;
+                        res = multiply(stack);
                     }
                     else if (str.equals("/")) {
-                        res = num2 / num1;
+                        res = divide(stack);
                     }
-                    else {
-                        throw new Exception();    
+                    else { // stack out of bound
+                        throw new IllegalArgumentException();    
                     }
+                    // System.out.printf("new res: %d\n", res);
                     stack.push(res);
-                } catch(Exception e) {
-                    System.out.printf("error: failed to compute operation");
+                } catch(IllegalArgumentException | EmptyStackException | ArithmeticException e) {
+                    
                 }
             }
             else {
@@ -42,7 +42,7 @@ class Solution {
                     int num = Integer.parseInt(str);
                     stack.push(num);
                 } catch(Exception e) {
-                    System.out.printf("error: failed to parse Integer \n");
+                    
                 }
             }
         }
@@ -53,30 +53,26 @@ class Solution {
         return stack.pop();
     }
 
-
-}
-class Operation {
-    int a;
-    int b;
-    Operand op;
-    public Operation(int num1, int num2, Operand op) {
-        a = num1;
-        b = num2;
-        this.op = op;
+    private int add(Stack<Integer> s) {
+        int num1 = s.pop();
+        int num2 = s.pop();
+        return num2 + num1;
     }
-
-    public int execute() {
-        return op.compute(num1, num2);
+    
+    private int multiply(Stack<Integer> s) {
+        int num1 = s.pop();
+        int num2 = s.pop();
+        return num2 * num1;
     }
-}
-
-interface Operand {
-    public compute(int num1, int num2);
-}
-
-class Plus implement Operand {
-    @Override
-    public compute(int a, int b) {
-        return a + b;
+    private int minus(Stack<Integer> s) {
+        int num1 = s.pop();
+        int num2 = s.pop();
+        return num2 - num1;
+    }
+    
+    private int divide(Stack<Integer> s) {
+        int num1 = s.pop();
+        int num2 = s.pop();
+        return num2 / num1;
     }
 }

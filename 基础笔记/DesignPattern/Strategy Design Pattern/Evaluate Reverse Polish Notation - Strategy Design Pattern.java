@@ -13,21 +13,21 @@ class Solution {
             String str = tokens[i];
             
             if (symbols.contains(str)) {
-                try {
+                try { // is operand
                     int num1 = stack.pop();
                     int num2 = stack.pop();
                     int res = 0;
                     if (str.equals("+")) {
-                        res = num1 + num2;
+                        res = new Operation(num1, num2, new Plus()).execute();
                     }
                     else if (str.equals("-")) {
-                        res = num2 - num1;
+                        res = new Operation(num2, num1, new Minus()).execute();
                     }
                     else if (str.equals("*")) {
-                        res = num2 * num1;
+                        res = new Operation(num2, num1, new Multiply()).execute();
                     }
                     else if (str.equals("/")) {
-                        res = num2 / num1;
+                        res = new Operation(num2, num1, new Divide()).execute();
                     }
                     else {
                         throw new Exception();    
@@ -53,7 +53,6 @@ class Solution {
         return stack.pop();
     }
 
-
 }
 class Operation {
     int a;
@@ -66,17 +65,63 @@ class Operation {
     }
 
     public int execute() {
-        return op.compute(num1, num2);
+        return this.op.compute(a, b);
     }
 }
 
 interface Operand {
-    public compute(int num1, int num2);
+    public int compute(int num1, int num2);
 }
 
-class Plus implement Operand {
+class Plus implements Operand {
     @Override
-    public compute(int a, int b) {
+    public int compute(int a, int b) {
         return a + b;
+    }
+}
+
+class Minus implements Operand {
+    @Override
+    public int compute(int a, int b) {
+        return a - b;
+    }
+}
+
+class Multiply implements Operand {
+    @Override
+    public int compute(int a, int b) {
+        return a * b;
+    }
+}
+
+class Divide implements Operand {
+    @Override
+    public int compute(int a, int b) {
+        return a / b;
+    }
+}
+
+public class MainClass {
+    public static String[] stringToStringArray(String line) {
+        JsonArray jsonArray = JsonArray.readFrom(line);
+        String[] arr = new String[jsonArray.size()];
+        for (int i = 0; i < arr.length; i++) {
+          arr[i] = jsonArray.get(i).asString();
+        }
+        return arr;
+    }
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        String line;
+        while ((line = in.readLine()) != null) {
+            String[] tokens = stringToStringArray(line);
+            
+            int ret = new Solution().evalRPN(tokens);
+            
+            String out = String.valueOf(ret);
+            
+            System.out.print(out);
+        }
     }
 }
