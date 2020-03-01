@@ -20,3 +20,34 @@ String line = "Hello! this is a line. It can't be hard to split into \"words\", 
 String[] words = line.split("\\W+");
 3.
 String[] Res = Text.split("\\P{L}+");
+
+
+# Print Tree
+```java
+
+    private void printTreeNode(TreeNode node) {
+        if (node == null) {
+            System.out.println("node is null");
+        } else {
+            System.out.printf("node is %d\n", node.val);
+            if (node.left != null) {
+                System.out.printf("       %d ", node.left.val);
+            } else { System.out.printf("       # "); }
+            if (node.right != null) {
+                System.out.printf("  %d\n", node.right.val);
+            } else { System.out.printf(" #\n");}
+        }
+    }
+```
+
+# Print TreeNode in Queue
+````java
+    private void printTreeNodeinQueue(Queue<TreeNode> que) {
+        System.out.println("The tree queue is: ");
+        System.out.print("[");
+        for (Object node: que) {
+            System.out.printf("%d ", ((TreeNode) node).val);
+        }
+        System.out.println("]");
+    }
+````
