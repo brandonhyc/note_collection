@@ -1,1 +1,0 @@
-https://leetcode.wang/leetCode-35-Search-Insert-Position.html
