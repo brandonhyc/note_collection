@@ -1,15 +1,12 @@
-package codingPad;
-class Solution {
+package codingPad.amz;
 
-
-    public int splitPrimes(String inputStr) {
+public class splitPrimes {
+    public static int splitPrimes(String inputStr) {
         return search(inputStr, 0, new Integer[inputStr.length()]);
     }
 
-    private int search(String inputStr, int start, Integer[] dp) { // how many ways to cut [start, n - 1]
-        if (start == inputStr.length()) {
-            return 1;
-        }
+    private static int search(String inputStr, int start, Integer[] dp) { // how many ways to cut [start, n - 1]
+        if (start == inputStr.length()) return 1;
         if (dp[start] != null) return dp[start];
 
         // cut a word [start, end]
@@ -21,7 +18,7 @@ class Solution {
                 if (i - start == inputStr.length()) continue;
                 String numStr = inputStr.substring(start, i);
                 int num = Integer.parseInt(numStr);
-                if (isPrime(num)) {
+                if (isPrimeLower1000(num)) {
                     wayCount += search(inputStr, i, dp);
                 }
             }
@@ -31,8 +28,8 @@ class Solution {
         return dp[start];
     }
 
-    private static boolean isPrime(int num) {
-        if (num <= 1) return false;
+    private static boolean isPrimeLower1000(int num) {
+        if (num <= 1 || num > 1000) return false;
 
         for (int i = 2; i < num; i++) {
             if (num % i == 0) return false;
@@ -40,4 +37,6 @@ class Solution {
 
         return true;
     }
+
+
 }

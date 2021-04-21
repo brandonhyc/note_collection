@@ -1,23 +1,34 @@
 package codingPad;
 
-import java.util.Arrays;
-
 public class Pad {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-//        4 4
-//        1 2
-//        3 6
-//        77
+//        System.out.println(s.splitPrimes("53739"));
 
-        int res = s.minContainerSize(
-                Arrays.asList(
-                        10
+        System.out.println(1.0 > 0);
+        System.out.println(isPrime(739));
 
-                ),
-                2
-        );
-        System.out.println(res);
+    }
+//    0 1 2 3 4
+//    5 3 7 3 9
+//
+//    5,3,7,3,x 0
+//    5,3,7,x,  0
+//    5,3,739   1
+//    5,37, x   0
+//    5,373,x   0
+//    5,3739    1
+//    53,739    1
+//    53739
+
+    private static boolean isPrime(int num) {
+        if (num <= 1) return false;
+
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) return false;
+        }
+
+        return true;
     }
 }
